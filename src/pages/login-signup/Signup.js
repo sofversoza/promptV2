@@ -13,6 +13,7 @@ function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    console.log(email, password, displayName, avatar)
     signup(email, password, displayName, avatar)
   }
 
@@ -20,7 +21,7 @@ function Signup() {
     setAvatar(null)
     // .files returns an array of files (u can select multiple files but we only want one)
     let selected = e.target.files[0]
-    // this shows us different properties for the selected file so we can use them for our if statement below (our checks)
+    // shows the different properties for the selected file so we can use them for our if statement below ALSO for our uploadPath in useSignup hook (avatar.name)
     console.log(selected)
 
     if (!selected) {
@@ -32,7 +33,7 @@ function Signup() {
       setAvatarError("Selected file must be an image")
       return
     }
-    if (selected.size > 100000) {
+    if (selected.size > 500000) {
       setAvatarError("Image file size must be less than 100kb")
       return
     }

@@ -1,4 +1,3 @@
-import './App.css'
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import { useAuthContext } from "./hooks/useAuthContext"
 import Navbar from './components/Navbar'
@@ -21,12 +20,8 @@ function App() {
             {user && <Navbar />}
             <Routes>
               <Route 
-                path="/landing-page" 
-                element={!user && <LandingPage />}
-              />
-              <Route 
                 path="/"
-                element={user ? <Home /> : <Navigate to="/landing-page" />}
+                element={user ? <Home /> : <LandingPage />}
               />
               <Route 
                 path="/login"
@@ -38,11 +33,11 @@ function App() {
               />
               <Route 
                 path="/create"
-                element={user ? <Create /> : <Navigate to="/landing-page" />}
+                element={user && <Create />}
               />
               <Route 
                 path="/projects/:id"
-                element={user ? <Project /> : <Navigate to="/landing-page" />}
+                element={user && <Project />}
               />
             </Routes>
           </div>

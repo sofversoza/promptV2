@@ -1,24 +1,49 @@
-import { auth } from "../firebase"
+import { useEffect, useState } from 'react'
+import { auth, db } from "../firebase.config"
 import { signOut } from "firebase/auth"
-import { useNavigate } from 'react-router-dom'
+import { doc, updateDoc } from "firebase/firestore"
 import { useAuthContext } from "../hooks/useAuthContext"
 
 export const useLogout = () => {
-  const navigate = useNavigate()
-  const { dispatch } = useAuthContext()
+  const [isCancelled, setIsCancelled] = useState(false)
+  const [error, setError] = useState(null)
+  const [isPending, setIsPending] = useState(false)
+  const { dispatch, user } = useAuthContext()
 
-  // we'll return this function from inside this hook to use in diff comps
-  const logout = () => {
-    signOut(auth)
-      .then(() => {
-        // console.log("user signed out")
-        dispatch({ type: "LOGOUT" })
-        navigate("/")
+  const logout = async () => {
+    setError(null)
+    setIsPending(true)
+
+    try {
+      // update user's online status before the user is logged out
+      const { uid } = user
+      await updateDoc(doc(db, "users", uid), {
+        online: false
       })
-      .catch((err) => {
-        console.log(err.message)
-      })
+
+      // sign out user
+      await signOut(auth)
+
+      // dispatch logout action
+      dispatch({ type: "LOGOUT" })
+
+      // update state
+      if (!isCancelled) {
+        setIsPending(false)
+        setError(null)
+      }
+    }
+    catch(err) {
+      if (!isCancelled) {
+        setError(err.message)
+        setIsPending(false)
+      }
+    }
   }
 
-  return { logout }
+  useEffect(() => {
+    return () => setIsCancelled(true)
+  }, [])
+
+  return { logout, error, isPending }
 }

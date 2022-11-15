@@ -1,29 +1,48 @@
-import { useState } from "react"
-import { auth } from "../firebase.config"
+import { useState, useEffect } from "react"
+import { auth, db } from "../firebase.config"
 import { useAuthContext } from "../hooks/useAuthContext"
 import { signInWithEmailAndPassword } from "firebase/auth"
+import { doc, updateDoc } from "firebase/firestore"
 
 export const useLogin = () => {
+  const [isCancelled, setIsCancelled] = useState(false)
   const [error, setError] = useState(null)
-  const [loading, setLoading] = useState(false)
+  const [isPending, setIsPending] = useState(false)
   const { dispatch } = useAuthContext()
 
-  // we'll return this function from inside this hook to use in diff comps
-  const login = (email, password) => {
+  const login = async (email, password) => {
     setError(null)
-    setLoading(true)
-    signInWithEmailAndPassword(auth, email, password)
-      .then((res) => {
-        // console.log("user logged in:", res.user)
-        // we're updating the global state to be the user that just logged in
-        dispatch({ type: "LOGIN", payload: res.user })  
+    setIsPending(true)
+
+    try {
+      // login user
+      const res = await signInWithEmailAndPassword(auth, email, password)
+
+      // update user's online status after logging in
+      await updateDoc(doc(db, "users", res.user.uid), {
+        online: true
       })
-      .catch((err) => {
+
+      // dispatch login action
+      dispatch({ type: "LOGIN", payload: res.user })
+
+      // update state
+      if (!isCancelled) {
+        setIsPending(false)
+        setError(null)
+      }
+    }
+    catch(err) {
+      if (!isCancelled) {
         setError(err.message)
-      })
-    setLoading(false)  
+        setIsPending(false)
+      }
+    }
   }
 
-  // these are what we can grab from diff comps to use this hook
-  return { error, loading, login }
+  useEffect(() => {
+    return () => setIsCancelled(true)
+  } ,[])
+
+  return { error, isPending, login }
 }

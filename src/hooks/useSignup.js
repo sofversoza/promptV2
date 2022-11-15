@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react"
 import { auth, storage, db } from "../firebase.config"
 import { useAuthContext } from "../hooks/useAuthContext"
-import { createUserWithEmailAndPassword } from "firebase/auth"
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage"
+import { doc, setDoc } from "firebase/firestore"
 
 export const useSignup = () => {
   const [isCancelled, setIsCancelled] = useState(false)
@@ -14,7 +16,7 @@ export const useSignup = () => {
     setIsPending(true)
 
     try {
-      // sign up
+      // sign up user
       const res = await createUserWithEmailAndPassword(auth, email, password)
 
       if (!res) {
@@ -22,15 +24,16 @@ export const useSignup = () => {
       }
 
       // upload user avatar
-      const uploadPath = `avatars/${res.user.uid}/${avatar.name}`
-      const img = await storage.ref(uploadPath).put(avatar)
-      const imgURL = await img.ref.getDownloadURL()
+      const imgRef = ref(storage, `avatars/${res.user.uid}/${avatar.name}`)
+      const imgPost = await uploadBytes(imgRef, avatar)
+      const imgURL = await getDownloadURL(imgPost.ref)
+
 
       // add display name and avatar img to user
-      await res.user.updateProfile({ displayName, photoURL: imgURL })
+      await updateProfile(res.user, { displayName, photoURL: imgURL })
 
-      // create a user document 
-      await db.collection('users').doc(res.user.uid).set({
+      // create a user document for every user to get all of signed up user's info (not just the currently online user)
+      await setDoc(doc(db, "users", res.user.uid), {
         online: true,
         displayName,
         photoURL: imgURL
