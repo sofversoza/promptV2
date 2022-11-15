@@ -16,8 +16,6 @@ export default function Navbar() {
         </li>
 
         <li>
-          {/* {!isPending && <button className="btn" onClick={logout}>Logout</button>}
-          {isPending && <button className="btn" disabled>Logging out...</button>} */}
           <Link>
             {!isPending && <AiOutlineLogout onClick={logout} style={{ fontSize: 24 }}/>}
             {isPending && <span>Logging out...</span>}

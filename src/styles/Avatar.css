@@ -1,0 +1,13 @@
+.avatar {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  /* if the img is square the corners wont show outside the circle */
+  overflow: hidden;
+}
+.avatar img {
+  /* 100% of whatever the avatar is (^^above so 80px) */
+  width: 100%;
+  height: 100%;
+}

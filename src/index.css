@@ -8,9 +8,12 @@ body {
   box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+  display: flex;
+}
+.App .app-container {
+  flex-grow: 1;
+  padding: 0 60px;
 }
 
 /* global variables */
@@ -49,4 +52,8 @@ button {
 }
 button:hover {
   background-color: var(--primary-highlight);
+}
+
+ul {
+  padding-inline-start: 0!important;
 }

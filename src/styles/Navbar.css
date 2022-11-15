@@ -1,21 +1,16 @@
 .navbar {
-  width: 100%;
-  padding: 40px 0;
-  background: #212121;
-  color: #fff;
-  position: sticky;
+  padding: 10px 0!important;
+  border-bottom: 1px solid rgba(186, 50, 50, 0.2);
+  margin-bottom: 80px;
 }
 .navbar ul {
-  width: 95%;
   display: flex;
-  margin: 0 auto;
+  justify-content: space-between;
   list-style: none;
 }
-.navbar .logo {
+/* .navbar .logo {
   margin-right: auto;
-}
+} */
 .navbar a {
-  color: #fff;
   text-decoration: none;
-  margin-right: 20px;
 }

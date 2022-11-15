@@ -7,6 +7,7 @@ import Signup from './pages/login-signup/Signup'
 import Create from './pages/create/Create'
 import Project from './pages/project/Project'
 import LandingPage from './pages/landing/LandingPage'
+import Sidebar from "./components/Sidebar"
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
     <div className="App">
       {authIsReady && (
         <BrowserRouter>
+          {user && <Sidebar />}
           <div className="app-container">
             {user && <Navbar />}
             <Routes>
@@ -31,6 +33,10 @@ function App() {
                 path="/signup"
                 element={user ? <Navigate to="/" /> : <Signup />}
               />
+              {/* <Route 
+                path="/dashboard"
+                element={user && <Create />}
+              /> */}
               <Route 
                 path="/create"
                 element={user && <Create />}
