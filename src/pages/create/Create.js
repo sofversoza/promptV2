@@ -50,7 +50,7 @@ export default function Create() {
     await addDocument(prompt)
 
     if(!response.error) {
-      navigate("/")
+      navigate("/dashboard")
     }
   }
 

@@ -28,7 +28,6 @@ export const useSignup = () => {
       const imgPost = await uploadBytes(imgRef, avatar)
       const imgURL = await getDownloadURL(imgPost.ref)
 
-
       // add display name and avatar img to user
       await updateProfile(res.user, { displayName, photoURL: imgURL })
 

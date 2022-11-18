@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { auth, db } from "../firebase.config"
 import { signOut } from "firebase/auth"
 import { doc, updateDoc } from "firebase/firestore"
@@ -9,6 +10,7 @@ export const useLogout = () => {
   const [error, setError] = useState(null)
   const [isPending, setIsPending] = useState(false)
   const { dispatch, user } = useAuthContext()
+  const navigate = useNavigate()
 
   const logout = async () => {
     setError(null)
@@ -26,6 +28,7 @@ export const useLogout = () => {
 
       // dispatch logout action
       dispatch({ type: "LOGOUT" })
+      navigate("/")
 
       // update state
       if (!isCancelled) {

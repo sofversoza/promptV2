@@ -8,6 +8,7 @@ import Create from './pages/create/Create'
 import Prompt from './pages/prompt/Prompt'
 import LandingPage from './pages/landing/LandingPage'
 import Sidebar from "./components/Sidebar"
+import Dashboard from "./pages/dashboard/Dashboard"
 
 
 function App() {
@@ -33,10 +34,10 @@ function App() {
                 path="/signup"
                 element={user ? <Navigate to="/" /> : <Signup />}
               />
-              {/* <Route 
+              <Route 
                 path="/dashboard"
-                element={user && <Create />}
-              /> */}
+                element={user && <Dashboard />}
+              />
               <Route 
                 path="/create"
                 element={user && <Create />}

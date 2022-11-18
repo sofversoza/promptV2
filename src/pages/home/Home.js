@@ -1,12 +1,10 @@
 import { useState } from "react"
 import PromptList from "../../components/PromptList"
-import { useAuthContext } from "../../hooks/useAuthContext"
 import { useCollection } from "../../hooks/useCollection"
 import PromptFilter from "./PromptFilter"
 import "./Home.css"
 
 export default function Home() {
-  const { user } = useAuthContext()
   const { documents, error } = useCollection("prompts")
   const [currentFilter, setCurrentFilter] = useState("All")
 
@@ -38,7 +36,7 @@ export default function Home() {
       {documents && (
         <PromptFilter currentFilter={currentFilter} changeFilter={changeFilter} />
       )}
-      {filteredProjects && <PromptList prompts={filteredProjects} /> }
+      {filteredProjects && <PromptList prompts={filteredProjects} />}
     </div>
   )
 }
