@@ -1,15 +1,16 @@
 import { useState, useEffect, useRef } from "react"
 import { collection, onSnapshot, query, where, orderBy } from "firebase/firestore"
-import { db } from "../firebase"
+import { db } from "../firebase.config"
 
 // real time collection data. c is for collection, _q is for query
-export const useCollection = (c, _q, _order) => {
+export const useCollection = (c, _q, _orderBy) => {
   const [documents, setDocuments] = useState(null)
+  const [error, setError] = useState(null)
 
-  // set up query. we wrapped it in useRef so it wont trigger our useEffect when it changes value because its in the array dependency (infinite loop otherwise)
-  // _q is an array and is "different" on every function call  
+  // if we don't use a ref --> infinite loop in useEffect
+  // _query is an array and is "different" on every function call  
   const q = useRef(_q).current
-  const order = useRef(_order).current
+  const order = useRef(_orderBy).current
 
   useEffect(() => {
     let ref = collection(db, c)
@@ -22,21 +23,21 @@ export const useCollection = (c, _q, _order) => {
       ref = orderBy(ref, ...order)
     }
 
-    // the 2nd argument (function) will fire everytime we get data changes in the collection, also fires once when we initially connect to it 
     const unsub = onSnapshot(ref, (snapshot) => {
       let results = []
       snapshot.docs.forEach(doc => {
         results.push({...doc.data(), id: doc.id})
       })
       setDocuments(results)
+      setError(null)
+    }, error => {
+      console.log(error)
+      setError("could not fetch data")
     })
 
-    // a clean up function so we can unsub from realtime db (onSnapshot) when a component unmounts
     return () => unsub()
 
-    // c (for collection) as a dependency so when a collection changes it reruns this whole function
   }, [c, q, order])
 
-  // lastly we'll return documents so we can use it in diff components
-  return { documents }
+  return { documents, error }
 }

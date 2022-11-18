@@ -5,7 +5,7 @@ import Home from './pages/home/Home'
 import Login from './pages/login-signup/Login'
 import Signup from './pages/login-signup/Signup'
 import Create from './pages/create/Create'
-import Project from './pages/project/Project'
+import Prompt from './pages/prompt/Prompt'
 import LandingPage from './pages/landing/LandingPage'
 import Sidebar from "./components/Sidebar"
 
@@ -42,8 +42,8 @@ function App() {
                 element={user && <Create />}
               />
               <Route 
-                path="/projects/:id"
-                element={user && <Project />}
+                path="/prompts/:id"
+                element={user && <Prompt />}
               />
             </Routes>
           </div>
