@@ -36,7 +36,7 @@ export const AuthContextProvider = ({ children }) => {
     })
   }, [])
 
-  console.log("AuthContext state:", state)
+  // console.log("AuthContext state:", state)
 
   return (
     // the dispatch function dispatches one of the events/actions we created (line 8-20)

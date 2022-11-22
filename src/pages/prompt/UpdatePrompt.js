@@ -1,9 +1,8 @@
-import { useState } from "react" 
+import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { useFirestore } from "../../hooks/useFirestore"
-import { useAuthContext } from "../../hooks/useAuthContext"
+import { serverTimestamp } from "firebase/firestore"
 import Select from "react-select"
-import "./Create.css"
 
 const categories = [
   { value: "poem", label: "Poem" },
@@ -13,50 +12,48 @@ const categories = [
   { value: "expository", label: "Expository" }
 ]
 
-export default function Create() {
-  const navigate = useNavigate()
-  const { user } = useAuthContext()
-  const { addDocument, response } = useFirestore("prompts")
-
+export default function UpdatePrompt({ prompt, setUpdate }) {
   const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
   const [category, setCategory] = useState("")
   const [formError, setFormError] = useState(null)
 
-  const handleSubmit = async (e) => {
+  const { updateDocument, response } = useFirestore("prompts")
+  const navigate = useNavigate()
+
+  // setting input values to prompt's og values
+  useEffect(() => {
+    setTitle(prompt.title)
+    setDescription(prompt.description)
+  }, [])
+
+  const handleUpdate = async (e) => {
     e.preventDefault()
     setFormError(null)
 
-    if(!category) {
+    if (!category) {
       setFormError("Please select a category")
       return
     }
 
-    const createdBy = {
-      displayName: user.displayName,
-      photoURL: user.photoURL,
-      id: user.uid
-    }
-
-    const prompt = {
+    await updateDocument(prompt.id, {
       title: title,
       description: description,
       category: category.value,
-      createdBy: createdBy,
-      comments: []
-    }
-    // console.log(prompt)
-    await addDocument(prompt)
+      createdBy: prompt.createdBy,
+      comments: prompt.comments,
+      updated_at: serverTimestamp()
+    })
 
-    if(!response.error) {
-      navigate("/dashboard")
+    if (!response.error) {
+      setUpdate(false)
     }
   }
 
   return (
-    <div className="create">
-      <h2>Compose</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="update">
+      <h2>Update</h2>
+      <form onSubmit={handleUpdate}>
         <label>
           <span>Prompt title:</span>
           <input
@@ -83,7 +80,8 @@ export default function Create() {
           />
         </label>
 
-        <button className="btn">Submit Prompt</button>
+        <button className="btn">Update Prompt</button>
+        <button className="btn" onClick={() => setUpdate(false)}>Cancel</button>
         {formError && <p className="error">{formError}</p>}
       </form>
     </div>
