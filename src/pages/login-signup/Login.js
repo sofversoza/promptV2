@@ -15,9 +15,9 @@ export default function Login() {
   }
   
   return (
-    <div className="form">
-      <div className="container-items">
-        <h2>Login</h2>
+    <div className="modalBG">
+      <div className="modalContent">
+        <h2>Welcome back</h2>
         <form onSubmit={handleSubmit}>
           <input 
             required

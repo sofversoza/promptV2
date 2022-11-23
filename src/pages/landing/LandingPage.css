@@ -1,8 +1,51 @@
 .landing {
   display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  height: 100vh;
+  /* flex-direction: column; */
+  min-height: 100vh;
   align-items: center;
   justify-content: center;
 }
+.landing a {
+  font-size: 1.5em;
+}
+.landing h1 {
+  font-size: clamp(1rem, 3vw + 1rem, 4rem);
+  position: relative;
+  font-family: 'Oxygen Mono', monospace;
+  position: relative;
+}
+.landing h1::before,
+.landing h1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.landing h1::before {
+  background: var(--bg-color);
+  animation: 
+    typewriter var(--typewriter-speed) steps(var(--typewriter-steps)) 2s forwards;
+}
+.landing h1::after {
+  width: 0.025em;
+  background: black;
+  margin-left: 2px;
+  animation: 
+    typewriter var(--typewriter-speed) steps(var(--typewriter-steps)) 2s forwards,
+    blink 750ms steps(var(--typewriter-steps)) infinite;
+}
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+@keyframes blink {
+  to {
+    background: transparent;
+  }
+}
+
+
+

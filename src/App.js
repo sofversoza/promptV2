@@ -9,7 +9,7 @@ import Prompt from './pages/prompt/Prompt'
 import LandingPage from './pages/landing/LandingPage'
 import Sidebar from "./components/Sidebar"
 import Dashboard from "./pages/dashboard/Dashboard"
-
+import Settings from "./pages/settings/Settings"
 
 function App() {
   const { user, authIsReady } = useAuthContext()
@@ -37,6 +37,10 @@ function App() {
               <Route 
                 path="/dashboard"
                 element={user && <Dashboard />}
+              />
+              <Route 
+                path="/settings"
+                element={user && <Settings />}
               />
               <Route 
                 path="/create"

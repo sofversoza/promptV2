@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react"
-import { useNavigate } from "react-router-dom"
 import { useFirestore } from "../../hooks/useFirestore"
 import { serverTimestamp } from "firebase/firestore"
 import Select from "react-select"
@@ -19,7 +18,6 @@ export default function UpdatePrompt({ prompt, setUpdate }) {
   const [formError, setFormError] = useState(null)
 
   const { updateDocument, response } = useFirestore("prompts")
-  const navigate = useNavigate()
 
   // setting input values to prompt's og values
   useEffect(() => {

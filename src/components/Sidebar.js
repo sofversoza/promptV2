@@ -3,7 +3,7 @@ import { useAuthContext } from "../hooks/useAuthContext"
 import { NavLink } from "react-router-dom"
 import { GiSpellBook } from "react-icons/gi"
 import { ImQuill } from "react-icons/im"
-import { MdDashboard } from "react-icons/md"
+import { MdDashboard, MdOutlineSettingsSuggest } from "react-icons/md"
 import Avatar from "./Avatar"
 
 export default function Sidebar() {
@@ -35,6 +35,12 @@ export default function Sidebar() {
               <NavLink to="/create">
                 <ImQuill className="sb-icons" />
                 <span>Compose</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/settings">
+                <MdOutlineSettingsSuggest className="sb-icons" />
+                <span>Settings</span>
               </NavLink>
             </li>
           </ul>
