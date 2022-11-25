@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useSignup } from "../../hooks/useSignup"
+import { IoCloseCircle } from "react-icons/io5"
 import "./Log-Sign.css"
 
-function Signup() {
+function Signup({ setShowSignup }) {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [displayName, setDisplayName] = useState("")
@@ -44,8 +45,11 @@ function Signup() {
   }
 
   return (
-    <div className="form">
-      <div className="container-items">
+    <div className="modalBG">
+      <div className="modalContent">
+        <div className="close-btn">
+          <IoCloseCircle onClick={() => setShowSignup(false)}/>
+        </div>
         <h2>Join prompt.</h2>
         {error && <p>{error}</p>}
         <form onSubmit={handleSubmit}>

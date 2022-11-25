@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { Link } from "react-router-dom"
 import { useLogin } from "../../hooks/useLogin"
+import { IoCloseCircle } from "react-icons/io5"
 
 import "./Log-Sign.css"
 
-export default function Login() {
+export default function Login({ setShowLogin }) {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const { error, isPending, login } = useLogin()
@@ -17,6 +18,9 @@ export default function Login() {
   return (
     <div className="modalBG">
       <div className="modalContent">
+        <div className="close-btn">
+          <IoCloseCircle onClick={() => setShowLogin(false)}/>
+        </div>
         <h2>Welcome back</h2>
         <form onSubmit={handleSubmit}>
           <input 

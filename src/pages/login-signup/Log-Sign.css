@@ -1,6 +1,28 @@
 /* font-family: 'Karla', sans-serif; */
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400&display=swap');
 
+.modalBG {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  z-index: 1;
+}
+
+.modalContent {
+  max-width: 410px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: rgb(245, 245, 245);
+  border-radius: 10px;
+  text-align: center;
+}
+
 .container-items {
   width: 100%;
   max-width: 440px;

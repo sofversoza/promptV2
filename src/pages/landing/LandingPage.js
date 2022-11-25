@@ -2,6 +2,7 @@ import { useState } from "react"
 import "./LandingPage.css"
 import { Link } from "react-router-dom"
 import Login from "../login-signup/Login"
+import Signup from "../login-signup/Signup"
 
 export default function LandingPage() {
   const [showLogin, setShowLogin] = useState(false)
@@ -9,15 +10,15 @@ export default function LandingPage() {
 
   return (
     <div className="landing">
-      {/* <h1>Welcome to Prompt.</h1>
-      <Link to="/login">Login</Link>
-      <Link to="/signup">Join prompt</Link> */}
-
-      {/* <button onClick={() => setShowLogin(true)}>Login</button>
-      {showLogin && <Login />} */}
-
-      <h1>Prompt</h1>
-
+      <div className="typewriter-logo">
+        <h1>Prompt</h1>
+      </div>
+      <div className="actions">
+        <button onClick={() => setShowLogin(true)}>Login</button>
+        <button onClick={() => setShowSignup(true)}>Sign up</button>
+        {showLogin && <Login setShowLogin={setShowLogin} />}
+        {showSignup && <Signup setShowSignup={setShowSignup} />}
+      </div>
     </div>
   )
 }
