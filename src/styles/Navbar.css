@@ -1,16 +1,35 @@
 .navbar {
   padding: 10px 0!important;
-  border-bottom: 1px solid rgba(186, 50, 50, 0.2);
+  border-bottom: 1px solid var(--accent-color);
   margin-bottom: 80px;
 }
 .navbar ul {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   list-style: none;
 }
-/* .navbar .logo {
-  margin-right: auto;
-} */
 .navbar a {
   text-decoration: none;
+}
+.navbar .options span {
+  font-size: 0.9em;
+  color: var(--primary-color);
+}
+.navbar .options .nav-icon {
+  font-size: 1.35em;
+  vertical-align: top;
+  margin-left: 3px;
+  color: var(--primary-color);
+}
+.navbar .options span:hover,
+.navbar .options .nav-icon:hover {
+  color: var(--text-color);
+}
+.navbar .typewriter-logo h1 {
+  font-size: 24px !important;
+  cursor: pointer;
+}
+.navbar .typewriter-logo h1::after {
+  width: 0.035em !important;
 }

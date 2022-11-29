@@ -2,7 +2,7 @@ import React from 'react'
 import '../styles/Navbar.css'
 import { Link } from 'react-router-dom'
 import { useLogout } from '../hooks/useLogout'
-import { AiOutlineLogout } from 'react-icons/ai'
+import { IoLogOutOutline } from 'react-icons/io5'
 
 export default function Navbar() {
   const { logout, isPending } = useLogout()
@@ -11,13 +11,16 @@ export default function Navbar() {
     <div className="navbar">
       <ul>
         <li className="logo">
-          {/* <img src={} alt="logo" /> */}
-          <span>prompt.</span>
+          <div className="typewriter-logo">
+            <Link to="/"><h1>Prompt</h1></Link>
+          </div>
         </li>
 
-        <li>
+        <li className="options">
           <Link>
-            {!isPending && <AiOutlineLogout onClick={logout} style={{ fontSize: 24 }}/>}
+            {!isPending && <span onClick={logout}>
+              Logout <IoLogOutOutline className="nav-icon" /></span> 
+            }
             {isPending && <span>Logging out...</span>}
           </Link>
         </li>

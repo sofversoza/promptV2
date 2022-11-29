@@ -1,6 +1,3 @@
-/* font-family: 'Karla', sans-serif; */
-@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400&display=swap');
-
 .modalBG {
   position: fixed;
   top: 0;
@@ -13,72 +10,89 @@
   background: rgba(0,0,0,0.6);
   z-index: 1;
 }
-
 .modalContent {
   max-width: 410px;
+  min-height: 350px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 20px;
   background: rgb(245, 245, 245);
   border-radius: 10px;
   text-align: center;
 }
-
-.container-items {
-  width: 100%;
-  max-width: 440px;
-}
-
-.form {
-  font-family: 'Karla', sans-serif;
-  font-size: 1.2em;
+.close-btn {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 90vh;
 }
-
-.form h2 {
-  text-align: center;
-  margin-bottom: 10%;
-  font-size: 2em;
-  font-weight: 300;
+.form-icon {
+  font-size: 22px;
+  color: var(--text-color);
+  cursor: pointer;
 }
-
-.form a {
-  color: var(--primary-color);
+.modalContent form {
+  font-size: 0.85em;
 }
-.form a:hover {
-  color: var(--primary-highlight);
-}
-
-.form ::placeholder {
+.modalContent form ::placeholder {
   /* opacity for Firefox users */
   opacity: 1;
-  color: rgb(153, 152, 152);
+  color: var(--text-info);
+  font-family: var(--body-font);
   font-size: 1em;
-  font-weight: 300;
 }
-
-.form input {
-  font-family: 'Karla', sans-serif;
-  font-size: 1.2em;
-  font-weight: 300;
-  color: rgb(103, 102, 102);
-  min-width: 100%;
-  height: 4vh;
+.modalContent form input {
+  /* font-family: var(--body-font); */
+  font-size: var(--body-font-size);
+  color: var(--text-color);
+  min-width: 85%;
+  height: 1.8vh;
   margin: 0.3em 0;
-  padding: 25px 15px;
+  padding: 15px;
+  border-radius: 3px;
   border: none;
-  border-bottom: 0.1px solid rgb(184, 184, 184);
   outline: none;
 }
-
-.form input:focus {
+.modalContent form input:focus {
   background-color: rgba(123, 120, 121, 0.1);
+}
+.btn-container {
+  display: flex;
+  margin: 15px auto;
+  width: 90%;
+}
+.form-info {
+  margin: 30px 10px 0 10px;
+  font-size: 0.9em;
+}
+.form-info span {
+  color: var(--primary-color);
+  font-weight: bold;
+  cursor: pointer;
+}
+.form-info span:hover {
+  color: var(--primary-highlight);
+}
+.avatar-input {
+  /* background: pink; */
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+}
+.avatar-input p {
+  color: var(--text-color);
+  font-size: 1.1em;
+  text-align: left;
+  padding-left: 17px;
+  margin-block-end: 0!important;
+}
+.modalContent input::file-selector-button {
+  color: var(--text-color);
+  padding: 0.3em;
+  border: 0.55px solid var(--accent-color);
   border-radius: 3px;
 }
-
-.form label {
-  margin: 3% 0 0 1em;
-  font-size: 1em;
+.modalContent input::file-selector-button:hover {
+  background: rgb(188, 188, 188);
+  border-color: rgb(188, 188, 188);
+}
+.err-container {
+  width: 85%;
+  margin: 0 auto;
 }

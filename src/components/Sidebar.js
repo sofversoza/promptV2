@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom"
 import { GiSpellBook } from "react-icons/gi"
 import { ImQuill } from "react-icons/im"
 import { MdDashboard, MdOutlineSettingsSuggest } from "react-icons/md"
+import { VscSettings } from "react-icons/vsc"
 import Avatar from "./Avatar"
 
 export default function Sidebar() {
@@ -14,14 +15,14 @@ export default function Sidebar() {
       <div className="sidebar-content">
         <div className="user">
           <Avatar src={user.photoURL} />
-          <p>Hey {user.displayName}!</p>
+          <p>Hi {user.displayName}!</p>
         </div>
 
         <nav className="links">
           <ul>
             <li>
               <NavLink to="/">
-                <GiSpellBook className="sb-icons" style={{ fontSize:"25" }} />
+                <GiSpellBook className="sb-icons" />
                 <span>Prompts</span>
               </NavLink>
             </li>
@@ -39,7 +40,7 @@ export default function Sidebar() {
             </li>
             <li>
               <NavLink to="/settings">
-                <MdOutlineSettingsSuggest className="sb-icons" />
+                <VscSettings className="sb-icons" />
                 <span>Settings</span>
               </NavLink>
             </li>

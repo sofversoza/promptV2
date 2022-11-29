@@ -1,11 +1,10 @@
 import { useState } from 'react'
-import { Link } from "react-router-dom"
 import { useLogin } from "../../hooks/useLogin"
-import { IoCloseCircle } from "react-icons/io5"
+import { MdOutlineClose } from "react-icons/md"
 
 import "./Log-Sign.css"
 
-export default function Login({ setShowLogin }) {
+export default function Login({ setShowLogin, setShowSignup }) {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const { error, isPending, login } = useLogin()
@@ -14,12 +13,17 @@ export default function Login({ setShowLogin }) {
     e.preventDefault()
     login(email, password)
   }
+
+  const changeModals = () => {
+    setShowLogin(false)
+    setShowSignup(true)
+  }
   
   return (
     <div className="modalBG">
       <div className="modalContent">
         <div className="close-btn">
-          <IoCloseCircle onClick={() => setShowLogin(false)}/>
+          <MdOutlineClose onClick={() => setShowLogin(false)} className="form-icon"/>
         </div>
         <h2>Welcome back</h2>
         <form onSubmit={handleSubmit}>
@@ -37,12 +41,17 @@ export default function Login({ setShowLogin }) {
             onChange={(e) => setPassword(e.target.value)}
             value={password}
           />
-          {!isPending && <button className="btn">Login</button>}
-          {isPending && <button className="btn" disabled>Loading...</button>}
-          {error && <div className="error">{error}</div>}
+          <div className="err-container">
+            {error && <div className="error">{error}</div>}
+          </div>
+          <div className="btn-container">
+            {!isPending && <button className="btn">Login</button>}
+            {isPending && <button className="btn" disabled>Loading...</button>}
+          </div>
         </form>
-        <div>
-          Need to create an account? <Link to="/signup">Join prompt.</Link>
+        <div className="form-info">
+          Need to create an account?{" "} 
+          <span onClick={changeModals}>Join prompt</span>
         </div>
       </div>
     </div>

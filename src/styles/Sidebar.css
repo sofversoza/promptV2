@@ -1,7 +1,7 @@
 .sidebar {
   width: 260px;
   min-width: 260px;
-  background: rgb(209, 143, 154);
+  background: var(--bg-sidebar);
   min-height: 100vh;
   position: relative;
   color: #fff;
@@ -13,11 +13,10 @@
 }
 .sidebar .user {
   text-align: center;
-  padding: 30px;
-  /* border-bottom: 1px solid rgba(255, 255, 255, 0.2); */
+  padding: 40px;
 }
 .sidebar .links {
-  margin-top: 30px;
+  margin-top: 20px;
   margin-left: 35px;
 }
 .sidebar .links li {
@@ -26,7 +25,7 @@
 }
 .sidebar .links a {
   display: flex;
-  padding: 12px;
+  padding: 10px;
   text-decoration: none;
   width: 100%;
   color: #fff;
@@ -34,13 +33,13 @@
 }
 .sidebar .sb-icons {
   margin-right: 13px;
-  font-size: 20px;
+  font-size: 23px;
 }
 .sidebar .sb-icons.active {
   filter: invert(100%);
 }
 .sidebar .links a.active {
-  color: #555;
-  background: rgb(245, 202, 202);
+  color: var(--text-color);
+  background: var(--bg-color);
   border-radius: 20px 0 0 20px;
 }

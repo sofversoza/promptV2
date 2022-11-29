@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
 import { useSignup } from "../../hooks/useSignup"
-import { IoCloseCircle } from "react-icons/io5"
+import { MdOutlineClose } from "react-icons/md"
 import "./Log-Sign.css"
 
-function Signup({ setShowSignup }) {
+function Signup({ setShowSignup, setShowLogin }) {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [displayName, setDisplayName] = useState("")
@@ -34,8 +33,8 @@ function Signup({ setShowSignup }) {
       setAvatarError("Selected file must be an image")
       return
     }
-    if (selected.size > 500000) {
-      setAvatarError("Image file size must be less than 100kb")
+    if (selected.size > 300000) {
+      setAvatarError("Image file size must be less than 300kb")
       return
     }
     // if none of our checkpoints were triggered and returned an err, this code will run
@@ -44,14 +43,18 @@ function Signup({ setShowSignup }) {
     console.log("thumbnail updated successfully")
   }
 
+  const changeModals = () => {
+    setShowSignup(false)
+    setShowLogin(true)
+  }
+
   return (
     <div className="modalBG">
       <div className="modalContent">
         <div className="close-btn">
-          <IoCloseCircle onClick={() => setShowSignup(false)}/>
+          <MdOutlineClose onClick={() => setShowSignup(false)} className="form-icon"/>
         </div>
-        <h2>Join prompt.</h2>
-        {error && <p>{error}</p>}
+        <h2>Join prompt</h2>
         <form onSubmit={handleSubmit}>
           <input 
             required
@@ -74,18 +77,26 @@ function Signup({ setShowSignup }) {
             onChange={(e) => setDisplayName(e.target.value)}
             value={displayName}
           />
-          <input 
-            required
-            type="file"
-            onChange={handleFileChange}
-          />
-          {avatarError && <div className="error">{avatarError}</div>}
-          {!isPending && <button>Sign up</button>}
-          {isPending && <button disabled>Loading...</button>}
-          {error && <div className="error">{error}</div>}
+          <div className="avatar-input">
+            <p>Upload an avatar image</p>
+            <input 
+              required
+              type="file"
+              onChange={handleFileChange}
+            />
+          </div>
+          <div className="err-container">
+            {avatarError && <div className="error">{avatarError}</div>}
+            {error && <div className="error">{error}</div>}
+          </div>
+          <div className="btn-container">
+            {!isPending && <button>Sign up</button>}
+            {isPending && <button disabled>Loading...</button>}
+          </div>
         </form>
-        <div>
-          Already have an account? <Link to="/login">Log In</Link>
+        <div className="form-info">
+          Already have an account?{" "} 
+          <span onClick={changeModals}>Login</span>
         </div>
       </div>
     </div>

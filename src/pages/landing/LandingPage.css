@@ -5,17 +5,14 @@
   align-items: center;
   justify-content: center;
 }
-.landing a {
-  font-size: 1.5em;
-}
-.landing h1 {
+.typewriter-logo h1 {
   font-size: clamp(1.5rem, 3vw + 1.5rem, 5rem);
   position: relative;
   font-family: 'Oxygen Mono', monospace;
   position: relative;
 }
-.landing h1::before,
-.landing h1::after {
+.typewriter-logo h1::before,
+.typewriter-logo h1::after {
   content: "";
   position: absolute;
   top: 0;
@@ -23,15 +20,16 @@
   bottom: 0;
   left: 0;
 }
-.landing h1::before {
+.typewriter-logo h1::before {
   background: var(--bg-color);
   animation: 
     typewriter var(--typewriter-speed) steps(var(--typewriter-steps)) 2s forwards;
 }
-.landing h1::after {
+.typewriter-logo h1::after {
   width: 0.025em;
-  background: black;
-  margin-left: 2px;
+  height: 93%;
+  background: var(--text-color);
+  margin-left: 2.5px;
   animation: 
     typewriter var(--typewriter-speed) steps(var(--typewriter-steps)) 2s forwards,
     blink 750ms steps(var(--typewriter-steps)) infinite;

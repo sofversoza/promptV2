@@ -16,8 +16,8 @@ export default function LandingPage() {
       <div className="actions">
         <button onClick={() => setShowLogin(true)}>Login</button>
         <button onClick={() => setShowSignup(true)}>Sign up</button>
-        {showLogin && <Login setShowLogin={setShowLogin} />}
-        {showSignup && <Signup setShowSignup={setShowSignup} />}
+        {showLogin && <Login setShowLogin={setShowLogin} setShowSignup={setShowSignup} />}
+        {showSignup && <Signup setShowSignup={setShowSignup} setShowLogin={setShowLogin} />}
       </div>
     </div>
   )
