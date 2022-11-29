@@ -52,6 +52,9 @@
 .modalContent form input:focus {
   background-color: rgba(123, 120, 121, 0.1);
 }
+.modalContent button {
+  width: 100% !important;
+}
 .btn-container {
   display: flex;
   margin: 15px auto;

@@ -1,29 +1,80 @@
+/* PROMPT FILTER */
 .prompt-filter {
-  margin: 30px auto;
-}
-.prompt-filter nav {
-  display: flex;
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 4px;
+  margin-top: -25px;
+  /* background: pink; */
 }
 .prompt-filter p {
-  font-size: 0.9em;
-  margin-right: 10px;
+  font-size: 0.75em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.prompt-filter nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #fff; */
 }
 .prompt-filter button {
   background: transparent;
-  border: 0;
-  font-family: inherit;
-  font-weight: bold;
   color: var(--text-color);
   cursor: pointer;
-  border-right: 1px solid #e4e4e4;
-  font-size: 0.9em;
-}
-.prompt-filter button:last-child {
-  border: 0;
+  font-size: 0.80em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 .prompt-filter button.active {
   color: var(--primary-color);
+  letter-spacing: 4px;
+  font-style: italic;
+  border-radius: 0 !important;
 } 
+
+/* PROMPT LIST */
+.prompt-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.prompt-card {
+  background: #eceef06b;
+  width: 380px;
+  margin: 10px 8px;
+  padding: 15px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.prompt-card:hover {
+  background: var(--bg-color);
+}
+.prompt-card .user-info {
+  padding-top: 8px;
+  margin: auto 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  /* background: pink; */
+}
+.user-info .avatar {
+  max-height: 30px;
+  max-width: 30px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.user-info span,
+.user-info p {
+  font-size: 0.85em;
+}
+.user-info p {
+  color: var(--text-info-value)
+}
+.prompt-card .prompt-info span {
+  font-size: 1.2em;
+}
+.prompt-card .prompt-info p {
+  font-size: 0.85em;
+  color: var(--text-info);
+}

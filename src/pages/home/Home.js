@@ -6,7 +6,7 @@ import "./Home.css"
 
 export default function Home() {
   const { documents, error } = useCollection("prompts")
-  const [currentFilter, setCurrentFilter] = useState("All")
+  const [currentFilter, setCurrentFilter] = useState("all")
 
   const changeFilter = (newFilter) => {
     setCurrentFilter(newFilter)
@@ -31,7 +31,6 @@ export default function Home() {
 
   return (
     <div className="home">
-      <h2>Home</h2>
       {error && <p className="error">{error}</p>}
       {documents && (
         <PromptFilter currentFilter={currentFilter} changeFilter={changeFilter} />

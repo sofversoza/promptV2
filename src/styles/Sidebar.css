@@ -13,7 +13,11 @@
 }
 .sidebar .user {
   text-align: center;
-  padding: 40px;
+  padding: 25px;
+}
+.sidebar .avatar {
+  width: 80px;
+  height: 80px;
 }
 .sidebar .links {
   margin-top: 20px;
