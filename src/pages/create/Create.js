@@ -55,37 +55,40 @@ export default function Create() {
 
   return (
     <div className="create">
-      <h2>Compose</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          <span>Prompt title:</span>
-          <input
-            required
-            type="text"
-            onChange={(e) => setTitle(e.target.value)}
-            value={title}
-          />
-        </label>
-        <label>
-          <span>Prompt description:</span>
-          <textarea
-            required
-            type="text"
-            onChange={(e) => setDescription(e.target.value)}
-            value={description}
-          ></textarea>
-        </label>
-        <label>
-          <span>Project category:</span>
-          <Select 
-            onChange={(option) => setCategory(option)}
-            options={categories}
-          />
-        </label>
+      <div className="header-box">
+        <h2>Compose</h2>
+      </div>
 
-        <button className="btn">Submit Prompt</button>
-        {formError && <p className="error">{formError}</p>}
-      </form>
+      <div className="paper">
+        <div className="paper-content">
+          <form onSubmit={handleSubmit}>
+            <input
+              required
+              type="text"
+              onChange={(e) => setTitle(e.target.value)}
+              value={title}
+            />
+            <span>Title</span>
+            <textarea
+              required
+              type="text"
+              onChange={(e) => setDescription(e.target.value)}
+              value={description}>
+            </textarea>
+            <span className="span2">Description</span>
+
+            <div className="select">
+              <Select 
+                onChange={(option) => setCategory(option)}
+                options={categories}
+              />
+            </div>
+
+            <button className="btn">Submit Prompt</button>
+            {formError && <p className="error">{formError}</p>}
+          </form>
+        </div>
+      </div>
     </div>
   )
 }

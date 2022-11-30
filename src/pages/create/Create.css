@@ -1,0 +1,36 @@
+.paper {
+  background: rgba(245, 245, 245, 0.747);
+  border-radius: 3px;
+  min-height: 60vh;
+  display: flex;
+}
+.paper-content {
+  /* display: flex; */
+  margin: 0 auto;
+  padding: 20px;
+  width: 90%;
+}
+.paper-content input,
+.paper-content textarea {
+  margin-bottom: 5px;
+  padding: 2px;
+  width: 100%;
+  border: none;
+  border-bottom: 0.8px solid var(--accent-color);
+  background: transparent;
+}
+.paper-content input {
+  min-height: 30px;
+}
+.paper-content textarea {
+  min-height: 220px;
+}
+.paper-content .select {
+  margin-top: 40px;
+}
+.paper-content span {
+  font-size: 0.80em;
+}
+.paper-content .span2 {
+  margin-top: -2px;
+}

@@ -1,6 +1,5 @@
 import { useState } from "react"
 import "./LandingPage.css"
-import { Link } from "react-router-dom"
 import Login from "../login-signup/Login"
 import Signup from "../login-signup/Signup"
 
