@@ -53,6 +53,13 @@ export default function Create() {
     }
   }
 
+  const handleReset = () => {
+    setTitle("")
+    setDescription("")
+    setCategory(null)
+    setFormError(null)
+  }
+
   return (
     <div className="create">
       <div className="header-box">
@@ -62,29 +69,35 @@ export default function Create() {
       <div className="paper">
         <div className="paper-content">
           <form onSubmit={handleSubmit}>
+            <span>Title</span>
             <input
               required
               type="text"
               onChange={(e) => setTitle(e.target.value)}
               value={title}
             />
-            <span>Title</span>
+            <span>Description</span>
             <textarea
               required
               type="text"
               onChange={(e) => setDescription(e.target.value)}
               value={description}>
             </textarea>
-            <span className="span2">Description</span>
 
+            <span>Category</span>
             <div className="select">
               <Select 
                 onChange={(option) => setCategory(option)}
                 options={categories}
+                isClearable={true}
+                value={category}
               />
             </div>
 
-            <button className="btn">Submit Prompt</button>
+            <div className="buttons">
+              <button className="btn">Submit prompt</button>
+              <button onClick={handleReset}>Reset form</button>
+            </div>
             {formError && <p className="error">{formError}</p>}
           </form>
         </div>

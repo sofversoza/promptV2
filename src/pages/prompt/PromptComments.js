@@ -4,6 +4,7 @@ import { useAuthContext } from "../../hooks/useAuthContext"
 import { useFirestore } from "../../hooks/useFirestore"
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 import Avatar from '../../components/Avatar'
+import "./Prompt.css"
 
 export default function PromptComments({ prompt }) {
   const { updateDocument, response } = useFirestore("prompts")

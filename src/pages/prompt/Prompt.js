@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom"
 import { useDocument } from "../../hooks/useDocument"
 import PromptComments from "./PromptComments"
 import PromptDetail from "./PromptDetail"
+import "./Prompt.css"
 
 export default function Prompt() {
   const { id } = useParams()

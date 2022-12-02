@@ -1,0 +1,57 @@
+.prompt {
+  display: flex;
+}
+
+.prompt-detail {
+  flex: 1;
+}
+.prompt-detail h2 {
+  font-family: "essonnes-headline", serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 1.5em;
+}
+.prompt-detail h2::first-letter {
+  text-transform: uppercase;
+}
+.prompt-detail .avatar {
+  width: 35px;
+  height: 35px;
+}
+.prompt-detail .prompt-body {
+  margin: 40px 10px;
+  max-width: 75%;
+}
+.prompt-detail .prompt-body p {
+  font-family: "essonnes-display", serif;
+  font-weight: 300;
+  font-size: 1.1em;
+  line-height: 1.3em;
+  word-spacing: 1.5px;
+}
+.prompt-detail .prompt-body p::first-letter {
+  text-transform: uppercase;
+  font-family: "essonnes-display", serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.55em;
+  padding: 1.2% 0.5% 0.1em 0;
+  float: top;
+}
+.prompt-detail .buttons {
+  display: flex;
+  gap: 20px;
+  /* justify-content: space-between; */
+  border-top: 1px solid var(--accent-color);
+  max-width: 76%;
+}
+.prompt-detail .buttons p {
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  cursor: pointer;
+}
+.prompt-comments {
+  background: pink;
+}
