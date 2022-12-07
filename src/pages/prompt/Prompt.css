@@ -38,20 +38,21 @@
   padding: 1.2% 0.5% 0.1em 0;
   float: top;
 }
-.prompt-detail .buttons {
+.prompt-detail .actions {
   display: flex;
-  gap: 20px;
+  gap: 10px;
   /* justify-content: space-between; */
   border-top: 1px solid var(--accent-color);
   max-width: 76%;
 }
-.prompt-detail .buttons p {
-  font-size: 0.9em;
-  display: flex;
-  align-items: center;
-  gap: 3px;
+.prompt-detail .actions p {
+  padding-top: 8px;
+  font-size: 0.8em;
   cursor: pointer;
 }
+.prompt-detail .actions p:hover {
+  color: var(--primary-color);
+}
 .prompt-comments {
-  background: pink;
+  /* background: pink; */
 }

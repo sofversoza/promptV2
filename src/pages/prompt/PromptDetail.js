@@ -36,12 +36,10 @@ export default function PromptDetail({ prompt }) {
           <p>{prompt.description}</p>
         </div>
 
-        <div className="buttons">
+        <div className="actions">
           {/* only show delete & update button if the current user is the creator */}
           {user.uid === prompt.createdBy.id && (
             <>
-              {/* <p>Edit <MdEditNote className="icon1" onClick={() => setUpdate(true)} /></p>
-              <p>Delete <MdDeleteSweep className="icon2" onClick={handleClick} /></p> */}
               <p onClick={() => setUpdate(true)}>Edit </p>
               <p onClick={handleClick}>Delete </p>
             </>
