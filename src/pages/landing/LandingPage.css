@@ -71,14 +71,36 @@
   text-align: center;
 }
 .flex-item-3 {
+  margin-top: 3%;
   display: flex;
-  width: 30%;
-  justify-content: space-around;
-  margin-top: 5%;
-  gap: 15px;
-  /* border: 1px yellow solid; */
+  flex-direction: column;
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
-.landing button {
+.flex-item-3 .get-started h3 {
+  margin: 0;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.55px;
+  font-size: 22px;
+  font-family: "contralto-small", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+.flex-item-3 .get-started span {
+  font-family: "krul", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 65px;
+}
+.flex-item-3 .btn-cont {
+  display: flex;
+  gap: 10px;
+  width: 30%;
+}
+.flex-item-3 .btn-cont button {
   width: 100% !important;
   letter-spacing: 0.25px;
   /* border: 0.55px #fff solid; */

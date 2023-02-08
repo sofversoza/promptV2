@@ -32,10 +32,17 @@ export default function LandingPage() {
       </div>
 
       <div className="flex-item-3">
-        <button onClick={() => setShowLogin(true)}>Login</button>
-        <button onClick={() => setShowSignup(true)}>Join prompt</button>
-        {showLogin && <Login setShowLogin={setShowLogin} setShowSignup={setShowSignup} />}
-        {showSignup && <Signup setShowSignup={setShowSignup} setShowLogin={setShowLogin} />}
+        <div className="get-started">
+          <h3><span>G</span>et started</h3>
+        </div>
+        <div className="btn-cont">
+          <button onClick={() => setShowLogin(true)}>Login</button>
+          <button onClick={() => setShowSignup(true)}>Join prompt</button>
+          {showLogin && <Login setShowLogin={setShowLogin} 
+            setShowSignup={setShowSignup} />}
+          {showSignup && <Signup setShowSignup={setShowSignup} 
+            setShowLogin={setShowLogin} />}
+        </div>
       </div>
     </div>
   )
