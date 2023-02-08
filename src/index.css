@@ -11,7 +11,7 @@ body {
 }
 .App .app-container {
   flex-grow: 1;
-  padding: 0 50px;
+  /* padding: 0 50px; */
 }
 
 /* global variables */
@@ -50,7 +50,7 @@ body {
 button {
   border-radius: 50px;
   color: #fff;
-  background-color: var(--primary-color);
+  background-color: var(--primary-highlight);
   font-weight: 200;
   cursor: pointer;
   border: none;
@@ -60,7 +60,7 @@ button {
   /* width: 100%; */
 }
 button:hover {
-  background-color: var(--primary-highlight);
+  background-color: var(--primary-color);
 }
 
 ul {
