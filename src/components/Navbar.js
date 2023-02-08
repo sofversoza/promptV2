@@ -9,7 +9,20 @@ export default function Navbar() {
 
   return (
     <div className="navbar">
-      <ul>
+      
+      
+
+      <div className="prompt-cont">
+        <img 
+          src={require("../assets/PrmptGray.png")} 
+          alt="Prompt logo"
+          className="navbar-logo" 
+        />
+      </div>
+
+
+
+      {/* <ul>
         <li className="logo">
           <div className="typewriter-logo">
             <Link to="/"><h1>Prompt</h1></Link>
@@ -24,7 +37,7 @@ export default function Navbar() {
             {isPending && <span>Logging out...</span>}
           </Link>
         </li>
-      </ul>
+      </ul> */}
     </div>
   )
 }

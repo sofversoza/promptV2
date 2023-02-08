@@ -1,8 +1,25 @@
 .navbar {
-  padding: 10px 0!important;
+  /* padding: 10px 0!important; */
+  /* margin-bottom: 50px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border-bottom: 1px solid var(--accent-color);
-  margin-bottom: 50px;
+  padding: 25px;
+  height: 169px;
+  max-height: 169px;
 }
+.prompt-cont {
+  max-width: 12vw;
+}
+.prompt-cont .navbar-logo {
+  width: 100%;
+}
+
+
+
+
 .navbar ul {
   display: flex;
   justify-content: space-between;

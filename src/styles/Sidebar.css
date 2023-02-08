@@ -1,10 +1,13 @@
 .sidebar {
-  width: 260px;
-  min-width: 260px;
-  background: var(--bg-sidebar);
+  width: 280px;
+  min-width: 280px;
   min-height: 100vh;
   position: relative;
   color: #fff;
+  background-image: url("../assets/SOFBG.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .sidebar-content {
  /* if the contents inside the sidebar is bigger than its parent div (sidebar), we'll be able to scroll through them bc we're inheriting its parents width and is fixed */
@@ -14,6 +17,13 @@
 .sidebar .user {
   text-align: center;
   padding: 25px;
+  height: 150px;
+  max-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px red solid; */
 }
 .sidebar .avatar {
   width: 80px;
@@ -21,7 +31,7 @@
 }
 .sidebar .links {
   margin-top: 20px;
-  margin-left: 35px;
+  margin-left: 45px;
 }
 .sidebar .links li {
   margin-top: 15px;
