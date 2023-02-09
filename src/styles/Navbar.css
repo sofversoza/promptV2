@@ -10,45 +10,19 @@
   height: 169px;
   max-height: 169px;
 }
+.nav-action {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  /* border: 1px red solid; */
+}
+.nav-action .nav-icon {
+  text-align: bottom;
+}
 .prompt-cont {
-  max-width: 12vw;
+  max-width: 15vw;
 }
 .prompt-cont .navbar-logo {
   width: 100%;
 }
 
-
-
-
-.navbar ul {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  list-style: none;
-  height: 100px;
-}
-.navbar a {
-  text-decoration: none;
-}
-.navbar .options span {
-  font-size: 0.9em;
-  color: var(--primary-color);
-  letter-spacing: 0.5px;
-}
-.navbar .options .nav-icon {
-  font-size: 1.35em;
-  vertical-align: top;
-  /* margin-left: 1px; */
-  color: var(--primary-color);
-}
-.navbar .options span:hover,
-.navbar .options .nav-icon:hover {
-  font-style: italic;
-}
-.navbar .typewriter-logo h1 {
-  font-size: 24px !important;
-  cursor: pointer;
-}
-.navbar .typewriter-logo h1::after {
-  width: 0.035em !important;
-}

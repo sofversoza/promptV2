@@ -10,7 +10,12 @@ export default function Navbar() {
   return (
     <div className="navbar">
       
-      
+      <div className="nav-action">
+        <Link>
+          {!isPending && <span className='action-btn' onClick={logout}>Log out</span>}
+          {isPending && <span className='action-btn'>Logging out...</span>}
+        </Link>
+      </div>
 
       <div className="prompt-cont">
         <img 
@@ -20,24 +25,6 @@ export default function Navbar() {
         />
       </div>
 
-
-
-      {/* <ul>
-        <li className="logo">
-          <div className="typewriter-logo">
-            <Link to="/"><h1>Prompt</h1></Link>
-          </div>
-        </li>
-
-        <li className="options">
-          <Link>
-            {!isPending && <span onClick={logout}>
-              Logout <IoLogOutOutline className="nav-icon" /></span> 
-            }
-            {isPending && <span>Logging out...</span>}
-          </Link>
-        </li>
-      </ul> */}
     </div>
   )
 }
