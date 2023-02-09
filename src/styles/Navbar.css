@@ -1,14 +1,13 @@
 .navbar {
-  /* padding: 10px 0!important; */
-  /* margin-bottom: 50px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid var(--accent-color);
+  /* border-bottom:  0.25px solid var(--accent-color); */
   padding: 25px;
-  height: 169px;
-  max-height: 169px;
+  height: 127px;
+  max-height: 127px;
+  background-color: #f5f5f5ac;
 }
 .nav-action {
   width: 100%;
@@ -20,7 +19,7 @@
   text-align: bottom;
 }
 .prompt-cont {
-  max-width: 15vw;
+  max-width: 230px;
 }
 .prompt-cont .navbar-logo {
   width: 100%;

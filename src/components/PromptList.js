@@ -3,10 +3,10 @@ import "../pages/home/Home.css"
 import Avatar from "./Avatar"
 
 export default function PromptList({ prompts }) {
-  const maxLength = 130;
+  const maxLength = 145;
 
   return (
-    <div className="prompt-list">
+    <div className="prompt-list flexbox-cont">
       {prompts.length === 0 && <p>No prompts to show</p>}
       {prompts.map(prompt => (
         <Link to={`/prompts/${prompt.id}`} key={prompt.id}>
@@ -22,8 +22,8 @@ export default function PromptList({ prompts }) {
             <div className="prompt-info">
               <h5>{prompt.title}</h5>
               {prompt.description.length > maxLength ? 
-                  ( <p>{prompt.description.substring(0, maxLength)}
-                    <span className="read-more">...read more</span></p>
+                  ( <p>{prompt.description.substring(0, maxLength)}...
+                    <span className="read-more">read more</span></p>
                   ) 
                 :
                   <p>{prompt.description}</p>

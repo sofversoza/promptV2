@@ -9,7 +9,6 @@ export default function PromptFilter({ currentFilter, changeFilter }) {
   return (
     <div className="prompt-filter">
       <nav>
-        {/* <p>Categories:</p> */}
         {filterList.map(filter => (
           <button
             key={filter}
