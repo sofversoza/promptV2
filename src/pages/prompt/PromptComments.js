@@ -35,37 +35,45 @@ export default function PromptComments({ prompt }) {
 
   return (
     <div className="prompt-comments">
-      <h4>Comments</h4>
-      <ul>
-        {prompt.comments.length > 0 && prompt.comments.map(comment => (
-          <li key={comment.id}>
-            {/* we got these properties from the comment obj we created above */}
-            <div className="comment-author">
-              <Avatar src={comment.photoURL} />
-              <p>{comment.displayName}</p>
-            </div>
-            <div className="comment-date">
-              <p>
-                {formatDistanceToNow(comment.createdAt.toDate(), { addSuffix: true })}
-              </p>
-            </div>
-            <div className="comment-content">
-              <p>{comment.content}</p>
-            </div>
-          </li>
-        ))}
-      </ul>
-      <form className="add-comment" onSubmit={handleSubmit}>
-        <label>
-          <span>Add new comment:</span>
-          <textarea
-            required
-            onChange={(e) => setNewComment(e.target.value)}
-            value={newComment}
-          ></textarea>
-        </label>
-        <button className="btn">Add comment</button>
-      </form>
+      <div className="title">
+        <h3>Comments</h3>
+      </div>
+
+      <div className="comment-form">
+        <form className="add-comment" onSubmit={handleSubmit}>
+          <label>
+            <span>Add new comment:</span>
+            <textarea
+              required
+              onChange={(e) => setNewComment(e.target.value)}
+              value={newComment}
+            ></textarea>
+          </label>
+          <button className="btn">Add comment</button>
+        </form>
+      </div>
+
+      <div className="comment-card">
+        <ul>
+          {prompt.comments.length > 0 && prompt.comments.map(comment => (
+            <li key={comment.id}>
+              {/* we got these properties from the comment obj we created above */}
+              <div className="comment-author">
+                <Avatar src={comment.photoURL} />
+                <p>{comment.displayName}</p>
+              </div>
+              <div className="comment-date">
+                <p>
+                  {formatDistanceToNow(comment.createdAt.toDate(), { addSuffix: true })}
+                </p>
+              </div>
+              <div className="comment-content">
+                <p>{comment.content}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   )
 }

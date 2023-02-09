@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
-import "../pages/home/Home.css"
 import Avatar from "./Avatar"
+import "../pages/home/Home.css"
 
 export default function PromptList({ prompts }) {
   const maxLength = 145;

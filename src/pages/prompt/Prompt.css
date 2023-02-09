@@ -1,58 +1,112 @@
 .prompt {
   display: flex;
+  flex-direction: column;
+  margin: 3% 5%;
+  padding: 15px 35px;
+  border: 1px blue solid;
+}
+.prompt .prompt-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 3%;
+  /* border: 1px yellow solid; */
+}
+.prompt .prompt-detail .user-info {
+  /* background-color: lightblue; */
+  margin-bottom: 4%;
+}
+.prompt .prompt-detail .user-info .avatar {
+  width: 50px;
+  height: 50px;
+}
+.prompt .prompt-detail .user-info p {
+  font-size: 13px;
+  font-family: "forma-djr-display", sans-serif;
+  font-weight: 400;
+  font-style: normal; 
+  letter-spacing: 0.95px;
+}
+.prompt .prompt-detail .user-info .username,
+.prompt .prompt-detail .user-info .date {
+  font-family: "forma-djr-display", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  padding-left: 3px;
+  text-transform: uppercase;
+}
+.prompt .prompt-detail .user-info .username {
+  color: var(--primary-highlight);
+}
+.prompt .prompt-detail .user-info .date {
+  font-size: 12px;
+  color: var(--text-info-value);
 }
 
-.prompt-detail {
-  flex: 1;
+.prompt .prompt-detail .prompt-body {
+  /* background-color: palegreen; */
+  margin-top: 5px;
+  max-width: 500px;
+  overflow-x: hidden;
+  word-wrap: wrap;
 }
-.prompt-detail h2 {
+.prompt .prompt-detail .prompt-body h2 {
+  margin: 0;
   font-family: "essonnes-headline", serif;
   font-weight: 700;
   font-style: italic;
-  font-size: 1.5em;
+  font-size: 1.6em;
 }
 .prompt-detail h2::first-letter {
   text-transform: uppercase;
 }
-.prompt-detail .avatar {
-  width: 35px;
-  height: 35px;
+.prompt .prompt-detail .prompt-body .text-cont {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 10px;
+  border-top: 0.55px solid var(--accent-color);
 }
-.prompt-detail .prompt-body {
-  margin: 40px 10px;
-  max-width: 75%;
-}
-.prompt-detail .prompt-body p {
+.prompt .prompt-detail .prompt-body p {
   font-family: "essonnes-display", serif;
   font-weight: 300;
   font-size: 1.1em;
   line-height: 1.3em;
   word-spacing: 1.5px;
 }
-.prompt-detail .prompt-body p::first-letter {
+.prompt .prompt-detail .prompt-body p::first-letter {
   text-transform: uppercase;
   font-family: "essonnes-display", serif;
   font-weight: 400;
   font-style: italic;
   font-size: 1.55em;
-  padding: 1.2% 0.5% 0.1em 0;
+  padding: 1.2% 0.7% 0.1em 0;
   float: top;
 }
-.prompt-detail .actions {
+.prompt .prompt-detail .actions {
   display: flex;
   gap: 10px;
   /* justify-content: space-between; */
   border-top: 1px solid var(--accent-color);
   max-width: 76%;
 }
-.prompt-detail .actions p {
+.prompt .prompt-detail .actions p {
   padding-top: 8px;
   font-size: 0.8em;
   cursor: pointer;
 }
-.prompt-detail .actions p:hover {
+.prompt .prompt-detail .actions p:hover {
   color: var(--primary-color);
 }
-.prompt-comments {
-  /* background: pink; */
+
+/* COMMENTS */
+.prompt .prompt-comments {
+  background: pink;
+  display: flex;
+  flex-direction: column;
+}
+.prompt .prompt-comments .comment-card {
+
 }

@@ -35,6 +35,11 @@ export default function Home() {
       {documents && (
         <PromptFilter currentFilter={currentFilter} changeFilter={changeFilter} />
       )}
+      <div className="page-title-cont">
+        <h2 className="page-title">
+          Showing <span>{currentFilter}</span> Prompts
+        </h2>
+      </div>
       {filteredProjects && <PromptList prompts={filteredProjects} />}
     </div>
   )

@@ -11,10 +11,15 @@ export default function Dashboard() {
   )
 
   return (
-    <div className="dashboard">
-      <h1>Dashboard</h1>
-      {error && <p className="error">{error}</p>}
-      {documents && <PromptList prompts={documents} />}
-    </div>
+    <>
+      <div className="page-title-cont">
+        <h2 className="page-title">{`${user.displayName}'s Dashboard`}</h2>    
+      </div>
+
+      <div className="dashboard">
+        {error && <p className="error">{error}</p>}
+        {documents && <PromptList prompts={documents} />}
+      </div>
+    </>
   )
 }

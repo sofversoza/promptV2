@@ -53,7 +53,8 @@ export default function Create() {
     }
   }
 
-  const handleReset = () => {
+  const handleReset = (e) => {
+    e.preventDefault()
     setTitle("")
     setDescription("")
     setCategory(null)
@@ -61,47 +62,55 @@ export default function Create() {
   }
 
   return (
-    <div className="create">
-      <div className="header-box">
-        <h2>Compose</h2>
+    <>
+      <div className="page-title-cont">
+        <h2 className="page-title">Compose a new Prompt Submission</h2>    
       </div>
 
-      <div className="paper">
+      <div className="create flexbox-cont">
         <div className="paper-content">
           <form onSubmit={handleSubmit}>
-            <span>Title</span>
-            <input
-              required
-              type="text"
-              onChange={(e) => setTitle(e.target.value)}
-              value={title}
-            />
-            <span>Description</span>
-            <textarea
-              required
-              type="text"
-              onChange={(e) => setDescription(e.target.value)}
-              value={description}>
-            </textarea>
-
-            <span>Category</span>
-            <div className="select">
-              <Select 
-                onChange={(option) => setCategory(option)}
-                options={categories}
-                isClearable={true}
-                value={category}
-              />
+            <div className="form-title">
+              <input
+                required
+                type="text"
+                onChange={(e) => setTitle(e.target.value)}
+                value={title}
+                />
+              <span>Title</span>
             </div>
 
-            <div className="buttons">
-              <button className="btn">Submit prompt</button>
-              <button onClick={handleReset}>Reset form</button>
+            <div className="form-description">
+              <textarea
+                required
+                type="text"
+                onChange={(e) => setDescription(e.target.value)}
+                value={description}>
+              </textarea>
+              <span>Description</span>
             </div>
+
+            <div className="form-last-item">
+              <div className="form-category">
+                <span>Category</span>
+                  <Select 
+                    onChange={(option) => setCategory(option)}
+                    options={categories}
+                    isClearable={true}
+                    value={category}
+                  />
+              </div>
+
+              <div className="buttons">
+                <button className="btn">Submit</button>
+                <button onClick={handleReset}>Reset form</button>
+              </div>
+            </div>
+
             {formError && <p className="error">{formError}</p>}
           </form>
         </div>
       </div>
-    </div>
+    </>
   )
 }

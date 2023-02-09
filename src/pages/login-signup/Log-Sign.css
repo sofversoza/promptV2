@@ -38,7 +38,6 @@
   font-size: 1em;
 }
 .modalContent form input {
-  /* font-family: var(--body-font); */
   font-size: var(--body-font-size);
   color: var(--text-color);
   min-width: 85%;
@@ -73,7 +72,6 @@
   color: var(--primary-highlight);
 }
 .avatar-input {
-  /* background: pink; */
   display: flex;
   flex-direction: column;
   margin-top: 25px;

@@ -1,39 +1,65 @@
-.paper {
-  background: rgba(245, 245, 245, 0.747);
-  border-radius: 3px;
-  width: 50vw;
-  min-height: 60vh;
-  display: flex;
-}
-.paper-content {
-  margin: 0 auto;
-  padding: 20px;
+.create .paper-content {
+  /* border: 1px blue solid; */
   width: 90%;
 }
-.paper-content input,
-.paper-content textarea {
-  font-size: 1em;
+.create .paper-content span {
+  font-size: 0.75em;
+  color: var(--primary-highlight);
+  font-family: "forma-djr-display", sans-serif;
+  font-weight: 500;
+  font-style: normal;  
+  letter-spacing: 0.55px;
+}
+.create .paper-content .form-title,
+.create .paper-content .form-description,
+.create .paper-content .form-category  {
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 8px;
+  /* border: 1px red solid; */
+}
+.create .paper-content input,
+.create .paper-content textarea {
+  font-size: 0.9em;
   font-family: inherit;
   color: var(--text-color);
-  padding: 12px;
-  margin-bottom: 5px;
+  padding: 5px;
   width: 100%;
   border: none;
-  border-bottom: 0.8px solid var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
   background: transparent;
-  margin-bottom: 30px;
 }
-.paper-content textarea {
-  min-height: 200px;
+.create .paper-content input:focus,
+.create .paper-content textarea:focus {
+  outline: none;
+  background-color: var(--bg-whitesmoke);
+  border-radius: 6px;
 }
-.paper-content .select {
-  margin-top: 20px;
+.create .paper-content textarea {
+  min-height: 130px;
+  resize: none;
 }
-.paper-content span {
-  font-size: 0.85em;
+.create .paper-content .form-last-item {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  /* border: 1px red solid; */
 }
-.paper-content .buttons {
-  margin-top: 30px;
+.create .paper-content .form-category {
+  /* border: 3px pink solid; */
+  min-width: 40%;
+}
+.create .paper-content .buttons {
   display: flex;
   gap: 15px;
+  padding-right: 10px;
+}
+.create .paper-content .buttons button {
+  min-width: 120px;
+  font-size: 12px;
+  letter-spacing: 0.85px;
+  text-transform: uppercase;
 }

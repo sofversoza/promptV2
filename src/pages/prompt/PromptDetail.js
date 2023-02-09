@@ -24,16 +24,22 @@ export default function PromptDetail({ prompt }) {
       <UpdatePrompt prompt={prompt} setUpdate={setUpdate} />
       :
       <div className="prompt-detail">
-        <h2>{prompt.title}</h2>
 
         <div className="user-info">
           <Avatar src={prompt.createdBy.photoURL} alt="user's avatar" />
-          <p>Submitted by {prompt.createdBy.displayName}</p>
-          <p>Submitted on {prompt.createdAt.toDate().toDateString()}</p>
+          <p>Submitted by{" "} 
+            <span className="username">{prompt.createdBy.displayName}</span>
+          </p>
+          <p>Submitted on{" "} 
+            <span className="date">{prompt.createdAt.toDate().toDateString()}</span>
+          </p>
         </div>
 
         <div className="prompt-body">
-          <p>{prompt.description}</p>
+          <h2>{prompt.title}</h2>
+          <div className="text-cont">
+            <p>{prompt.description}</p>
+          </div>
         </div>
 
         <div className="actions">
