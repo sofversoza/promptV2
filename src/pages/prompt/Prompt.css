@@ -3,14 +3,13 @@
   flex-direction: column;
   margin: 3% 5%;
   padding: 15px 35px;
-  border: 1px blue solid;
+  /* border: 1px blue solid; */
 }
 .prompt .prompt-detail {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  margin-bottom: 3%;
   /* border: 1px yellow solid; */
 }
 .prompt .prompt-detail .user-info {
@@ -85,28 +84,86 @@
   padding: 1.2% 0.7% 0.1em 0;
   float: top;
 }
+
+/* ACTIONS - FOR UPDATING A PROMPT */
 .prompt .prompt-detail .actions {
+  /* background: pink; */
+  margin-top: 2%;
+  min-width: 7%;
   display: flex;
-  gap: 10px;
-  /* justify-content: space-between; */
-  border-top: 1px solid var(--accent-color);
-  max-width: 76%;
+  justify-content: space-between;
 }
 .prompt .prompt-detail .actions p {
-  padding-top: 8px;
-  font-size: 0.8em;
+  font-size: 0.7em;
   cursor: pointer;
 }
 .prompt .prompt-detail .actions p:hover {
-  color: var(--primary-color);
+  color: var(--primary-highlight);
 }
 
 /* COMMENTS */
 .prompt .prompt-comments {
-  background: pink;
+  /* background: pink; */
+  margin-top: 1%;
+  border-top: 0.55px solid var(--accent-color);
+}
+.prompt .prompt-comments .title h3 {
+  font-size: 16px;
+  font-family: "forma-djr-display", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.95px;
+}
+.prompt .prompt-comments span {
+  font-size: 13px;
+}
+.prompt .prompt-comments .comment-form {
+  /* background: pink; */
   display: flex;
-  flex-direction: column;
+  height: 50px;
+}
+.prompt .prompt-comments .comment-form .add-comment {
+  min-width: 55%;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.prompt .prompt-comments .comment-form textarea {
+  background-color: var(--bg-whitesmoke);
+  border: none;
+  color: var(--text-color);
+  padding: 5px;
+  width: 100%;
+  resize: none;
+  font-family: inherit;
+}
+.prompt .prompt-comments .comment-form textarea:focus {
+  outline: none;
+  border-radius: 3px;
+}
+.prompt .prompt-comments .comment-form button {
+  font-size: 12px;
+  padding: 10px 13px;
 }
 .prompt .prompt-comments .comment-card {
-
+  background: blue;
+  margin-top: 2.5%;
+  display: flex;
+}
+.prompt .prompt-comments .comment-card li {
+  background: pink;
+  list-style: none;
+  min-width: 410px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2%;
+}
+.prompt .prompt-comments .comment-card .comment-author {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.prompt .prompt-comments .comment-card .comment-author .avatar {
+  width: 35px;
+  height: 35px;
 }

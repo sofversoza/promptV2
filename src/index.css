@@ -83,6 +83,7 @@ button {
   font-family: "forma-djr-display", sans-serif;
   font-weight: 500;
   font-style: normal;
+  letter-spacing: 0.5px;
   background-color: var(--primary-highlight);
   cursor: pointer;
   border: none;

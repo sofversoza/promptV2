@@ -24,7 +24,6 @@ export default function PromptDetail({ prompt }) {
       <UpdatePrompt prompt={prompt} setUpdate={setUpdate} />
       :
       <div className="prompt-detail">
-
         <div className="user-info">
           <Avatar src={prompt.createdBy.photoURL} alt="user's avatar" />
           <p>Submitted by{" "} 
@@ -46,8 +45,8 @@ export default function PromptDetail({ prompt }) {
           {/* only show delete & update button if the current user is the creator */}
           {user.uid === prompt.createdBy.id && (
             <>
-              <p onClick={() => setUpdate(true)}>Edit </p>
-              <p onClick={handleClick}>Delete </p>
+              <p onClick={() => setUpdate(true)}>Edit</p>
+              <p onClick={handleClick}>Delete</p>
             </>
           )}
         </div>

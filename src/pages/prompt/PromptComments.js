@@ -39,17 +39,15 @@ export default function PromptComments({ prompt }) {
         <h3>Comments</h3>
       </div>
 
+      <span>Post a public comment:</span>
       <div className="comment-form">
         <form className="add-comment" onSubmit={handleSubmit}>
-          <label>
-            <span>Add new comment:</span>
-            <textarea
-              required
-              onChange={(e) => setNewComment(e.target.value)}
-              value={newComment}
-            ></textarea>
-          </label>
-          <button className="btn">Add comment</button>
+          <textarea
+            required
+            onChange={(e) => setNewComment(e.target.value)}
+            value={newComment}>
+          </textarea>
+          <button className="btn">Submit</button>
         </form>
       </div>
 
@@ -59,14 +57,22 @@ export default function PromptComments({ prompt }) {
             <li key={comment.id}>
               {/* we got these properties from the comment obj we created above */}
               <div className="comment-author">
-                <Avatar src={comment.photoURL} />
+                <Avatar src={comment.photoURL} className="avatar" />
                 <p>{comment.displayName}</p>
+                
+                <div className="comment-date">
+                  <p>
+                    {formatDistanceToNow(comment.createdAt.toDate(), { addSuffix: true })}
+                  </p>
+                </div>
               </div>
-              <div className="comment-date">
+
+              {/* <div className="comment-date">
                 <p>
                   {formatDistanceToNow(comment.createdAt.toDate(), { addSuffix: true })}
                 </p>
-              </div>
+              </div> */}
+
               <div className="comment-content">
                 <p>{comment.content}</p>
               </div>
