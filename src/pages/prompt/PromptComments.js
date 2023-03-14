@@ -39,7 +39,7 @@ export default function PromptComments({ prompt }) {
         <h3>Comments</h3>
       </div>
 
-      <span>Post a public comment:</span>
+      <span>Leave a public comment on this prompt</span>
       <div className="comment-form">
         <form className="add-comment" onSubmit={handleSubmit}>
           <textarea
@@ -47,10 +47,11 @@ export default function PromptComments({ prompt }) {
             onChange={(e) => setNewComment(e.target.value)}
             value={newComment}>
           </textarea>
-          <button className="btn">Submit</button>
+          <button className="btn">Post</button>
         </form>
       </div>
 
+      {/* <span>All comments</span> */}
       <div className="comment-card">
         <ul>
           {prompt.comments.length > 0 && prompt.comments.map(comment => (
@@ -58,7 +59,7 @@ export default function PromptComments({ prompt }) {
               {/* we got these properties from the comment obj we created above */}
               <div className="comment-author">
                 <Avatar src={comment.photoURL} className="avatar" />
-                <p>{comment.displayName}</p>
+                <p>{comment.displayName} · </p>
                 
                 <div className="comment-date">
                   <p>
@@ -66,12 +67,6 @@ export default function PromptComments({ prompt }) {
                   </p>
                 </div>
               </div>
-
-              {/* <div className="comment-date">
-                <p>
-                  {formatDistanceToNow(comment.createdAt.toDate(), { addSuffix: true })}
-                </p>
-              </div> */}
 
               <div className="comment-content">
                 <p>{comment.content}</p>

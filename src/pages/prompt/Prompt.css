@@ -85,7 +85,7 @@
   float: top;
 }
 
-/* ACTIONS - FOR UPDATING A PROMPT */
+/* ACTIONS - FOR UPDATING/DELETING A PROMPT */
 .prompt .prompt-detail .actions {
   /* background: pink; */
   margin-top: 2%;
@@ -106,6 +106,7 @@
   /* background: pink; */
   margin-top: 1%;
   border-top: 0.55px solid var(--accent-color);
+  max-width: 55%;
 }
 .prompt .prompt-comments .title h3 {
   font-size: 16px;
@@ -115,55 +116,77 @@
   letter-spacing: 0.95px;
 }
 .prompt .prompt-comments span {
-  font-size: 13px;
+  font-size: 12px;
 }
 .prompt .prompt-comments .comment-form {
   /* background: pink; */
   display: flex;
-  height: 50px;
+  /* height: 50px; */
+  /* margin-bottom: 1em; */
 }
 .prompt .prompt-comments .comment-form .add-comment {
-  min-width: 55%;
+  width: 100%;
   display: flex;
-  align-items: center;
-  gap: 1em;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35em;
 }
 .prompt .prompt-comments .comment-form textarea {
   background-color: var(--bg-whitesmoke);
+  margin-top: 4px;
   border: none;
   color: var(--text-color);
   padding: 5px;
   width: 100%;
+  border-radius: 3px;
   resize: none;
   font-family: inherit;
+  font-size: 12px;
 }
 .prompt .prompt-comments .comment-form textarea:focus {
   outline: none;
-  border-radius: 3px;
 }
 .prompt .prompt-comments .comment-form button {
   font-size: 12px;
-  padding: 10px 13px;
+  color: var(--primary-highlight);
+  padding: 0 5px;
+  margin: 0% !important;
+  background: none;
+}
+.prompt .prompt-comments .comment-form button:hover {
+  text-decoration: underline;
 }
 .prompt .prompt-comments .comment-card {
-  background: blue;
-  margin-top: 2.5%;
-  display: flex;
+  /* background: blue; */
+  margin-top: 0.55em;
 }
 .prompt .prompt-comments .comment-card li {
-  background: pink;
+  background: var(--bg-whitesmoke);
+  border-radius: 3px;
+  padding: 5px;
   list-style: none;
-  min-width: 410px;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 2%;
+  margin-bottom: 0.55em;
+  width: 100%;
 }
 .prompt .prompt-comments .comment-card .comment-author {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 0.15em;
   align-items: center;
+  /* background: yellow; */
 }
 .prompt .prompt-comments .comment-card .comment-author .avatar {
-  width: 35px;
-  height: 35px;
+  width: 25px;
+  height: 25px;
+  margin-right: 2px;
+}
+.prompt .prompt-comments .comment-card .comment-author p,
+.prompt .prompt-comments .comment-card .comment-content p {
+  font-size: 12px;
+}
+.prompt .prompt-comments .comment-card .comment-date p {
+  color: var(--text-info-value);
+}
+.prompt .prompt-comments .comment-card .comment-content {
+  /* min-width: 100%; */
 }
