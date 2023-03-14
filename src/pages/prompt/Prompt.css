@@ -10,10 +10,8 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  /* border: 1px yellow solid; */
 }
 .prompt .prompt-detail .user-info {
-  /* background-color: lightblue; */
   margin-bottom: 4%;
 }
 .prompt .prompt-detail .user-info .avatar {
@@ -44,7 +42,6 @@
 }
 
 .prompt .prompt-detail .prompt-body {
-  /* background-color: palegreen; */
   margin-top: 5px;
   max-width: 500px;
   overflow-x: hidden;
@@ -108,7 +105,7 @@
   border-top: 0.55px solid var(--accent-color);
   max-width: 55%;
 }
-.prompt .prompt-comments .title h3 {
+.prompt .prompt-comments h3 {
   font-size: 16px;
   font-family: "forma-djr-display", sans-serif;
   font-weight: 400;
@@ -122,7 +119,7 @@
   /* background: pink; */
   display: flex;
   /* height: 50px; */
-  /* margin-bottom: 1em; */
+  margin-bottom: 1.5em;
 }
 .prompt .prompt-comments .comment-form .add-comment {
   width: 100%;
@@ -136,7 +133,8 @@
   margin-top: 4px;
   border: none;
   color: var(--text-color);
-  padding: 5px;
+  padding: 10px;
+  min-height: 50px;
   width: 100%;
   border-radius: 3px;
   resize: none;
@@ -152,18 +150,24 @@
   padding: 0 5px;
   margin: 0% !important;
   background: none;
+  letter-spacing: 0.8px;
 }
 .prompt .prompt-comments .comment-form button:hover {
   text-decoration: underline;
 }
 .prompt .prompt-comments .comment-card {
-  /* background: blue; */
-  margin-top: 0.55em;
+  margin-top: 1em;
+}
+.prompt .prompt-comments .comment-card h3 {
+  font-size: 13px;
+}
+.prompt .prompt-comments .comment-card ul {
+  margin: 0;
 }
 .prompt .prompt-comments .comment-card li {
   background: var(--bg-whitesmoke);
   border-radius: 3px;
-  padding: 5px;
+  padding: 10px;
   list-style: none;
   margin-bottom: 0.55em;
   width: 100%;
@@ -173,7 +177,6 @@
   justify-content: flex-start;
   gap: 0.15em;
   align-items: center;
-  /* background: yellow; */
 }
 .prompt .prompt-comments .comment-card .comment-author .avatar {
   width: 25px;
@@ -186,7 +189,4 @@
 }
 .prompt .prompt-comments .comment-card .comment-date p {
   color: var(--text-info-value);
-}
-.prompt .prompt-comments .comment-card .comment-content {
-  /* min-width: 100%; */
 }

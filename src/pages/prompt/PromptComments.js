@@ -47,12 +47,12 @@ export default function PromptComments({ prompt }) {
             onChange={(e) => setNewComment(e.target.value)}
             value={newComment}>
           </textarea>
-          <button className="btn">Post</button>
+          <button className="btn">Submit</button>
         </form>
       </div>
 
-      {/* <span>All comments</span> */}
       <div className="comment-card">
+      <h3>All comments ({prompt.comments.length})</h3>
         <ul>
           {prompt.comments.length > 0 && prompt.comments.map(comment => (
             <li key={comment.id}>
