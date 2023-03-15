@@ -1,76 +1,37 @@
 .prompt {
   display: flex;
   flex-direction: column;
-  margin: 3% 5%;
-  padding: 15px 35px;
-  /* border: 1px blue solid; */
+  margin: 2% 5%;
+  padding: 10px 20px;
 }
 .prompt .prompt-detail {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  max-width: 55%;
 }
-.prompt .prompt-detail .user-info {
-  margin-bottom: 4%;
-}
-.prompt .prompt-detail .user-info .avatar {
-  width: 50px;
-  height: 50px;
-}
-.prompt .prompt-detail .user-info p {
-  font-size: 13px;
-  font-family: "forma-djr-display", sans-serif;
-  font-weight: 400;
-  font-style: normal; 
-  letter-spacing: 0.95px;
-}
-.prompt .prompt-detail .user-info .username,
-.prompt .prompt-detail .user-info .date {
-  font-family: "forma-djr-display", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  padding-left: 3px;
-  text-transform: uppercase;
-}
-.prompt .prompt-detail .user-info .username {
-  color: var(--primary-highlight);
-}
-.prompt .prompt-detail .user-info .date {
-  font-size: 12px;
-  color: var(--text-info-value);
-}
-
 .prompt .prompt-detail .prompt-body {
-  margin-top: 5px;
-  max-width: 500px;
-  overflow-x: hidden;
-  word-wrap: wrap;
+  margin-bottom: 1em;
 }
 .prompt .prompt-detail .prompt-body h2 {
   margin: 0;
   font-family: "essonnes-headline", serif;
   font-weight: 700;
   font-style: italic;
-  font-size: 1.6em;
+  font-size: 1.55em;
 }
 .prompt-detail h2::first-letter {
-  text-transform: uppercase;
+  text-transform: uppercase !important;
 }
 .prompt .prompt-detail .prompt-body .text-cont {
   display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  max-width: 500px;
-  margin-top: 10px;
-  border-top: 0.55px solid var(--accent-color);
+  margin-top: 0.55em;
+  margin-left: 0.55em;
 }
 .prompt .prompt-detail .prompt-body p {
   font-family: "essonnes-display", serif;
   font-weight: 300;
-  font-size: 1.1em;
-  line-height: 1.3em;
-  word-spacing: 1.5px;
+  font-size: 1em;
+  line-height: 1.1em;
+  word-spacing: 1px;
+  letter-spacing: 0.55px;
 }
 .prompt .prompt-detail .prompt-body p::first-letter {
   text-transform: uppercase;
@@ -78,17 +39,44 @@
   font-weight: 400;
   font-style: italic;
   font-size: 1.55em;
-  padding: 1.2% 0.7% 0.1em 0;
+  padding: 1.2% 0.7% 0.1em 0.35em;
   float: top;
+}
+.prompt .prompt-detail .prompt-body .user-info {
+  /* background: lightblue; */
+  margin: 0 0 3% 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.25em;
+}
+.prompt .prompt-detail .prompt-body .user-info .avatar {
+  width: 28px;
+  height: 28px;
+  margin-right: 1px;
+}
+.prompt .prompt-detail .prompt-body .user-info span {
+  font-size: 13px;
+  font-family: "forma-djr-display", sans-serif;
+  font-weight: 400;
+  font-style: normal; 
+  letter-spacing: 0.90px;
+}
+.prompt .prompt-detail .prompt-body .user-info p {
+  margin-block-start: 0 !important;
+  margin-block-end: 0 !important;
+}
+.prompt .prompt-detail .prompt-body .user-info .date {
+  font-size: 12px;
+  color: var(--text-info-value);
 }
 
 /* ACTIONS - FOR UPDATING/DELETING A PROMPT */
 .prompt .prompt-detail .actions {
   /* background: pink; */
-  margin-top: 2%;
-  min-width: 7%;
-  display: flex;
-  justify-content: space-between;
+  width: 100%;
+  margin-top: 1%;
 }
 .prompt .prompt-detail .actions p {
   font-size: 0.7em;
@@ -100,7 +88,6 @@
 
 /* COMMENTS */
 .prompt .prompt-comments {
-  /* background: pink; */
   margin-top: 1%;
   border-top: 0.55px solid var(--accent-color);
   max-width: 55%;
@@ -116,9 +103,7 @@
   font-size: 12px;
 }
 .prompt .prompt-comments .comment-form {
-  /* background: pink; */
   display: flex;
-  /* height: 50px; */
   margin-bottom: 1.5em;
 }
 .prompt .prompt-comments .comment-form .add-comment {
@@ -131,6 +116,7 @@
 .prompt .prompt-comments .comment-form textarea {
   background-color: var(--bg-whitesmoke);
   margin-top: 4px;
+  margin-bottom: 1.5px;
   border: none;
   color: var(--text-color);
   padding: 10px;
@@ -144,7 +130,8 @@
 .prompt .prompt-comments .comment-form textarea:focus {
   outline: none;
 }
-.prompt .prompt-comments .comment-form button {
+.prompt .prompt-comments .comment-form button,
+.prompt .prompt-detail .actions button {
   font-size: 12px;
   color: var(--primary-highlight);
   padding: 0 5px;
@@ -152,7 +139,8 @@
   background: none;
   letter-spacing: 0.8px;
 }
-.prompt .prompt-comments .comment-form button:hover {
+.prompt .prompt-comments .comment-form button:hover,
+.prompt .prompt-detail .actions button:hover {
   text-decoration: underline;
 }
 .prompt .prompt-comments .comment-card {

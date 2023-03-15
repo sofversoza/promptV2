@@ -24,18 +24,16 @@ export default function PromptDetail({ prompt }) {
       <UpdatePrompt prompt={prompt} setUpdate={setUpdate} />
       :
       <div className="prompt-detail">
-        <div className="user-info">
-          <Avatar src={prompt.createdBy.photoURL} alt="user's avatar" />
-          <p>Submitted by{" "} 
-            <span className="username">{prompt.createdBy.displayName}</span>
-          </p>
-          <p>Submitted on{" "} 
-            <span className="date">{prompt.createdAt.toDate().toDateString()}</span>
-          </p>
-        </div>
-
         <div className="prompt-body">
           <h2>{prompt.title}</h2>
+
+          <div className="user-info">
+            <Avatar src={prompt.createdBy.photoURL} alt="user's avatar" />
+            <span>{prompt.createdBy.displayName}</span>
+            <p>·</p>
+            <span className="date">{prompt.createdAt.toDate().toDateString()}</span>
+          </div>
+
           <div className="text-cont">
             <p>{prompt.description}</p>
           </div>
@@ -45,8 +43,8 @@ export default function PromptDetail({ prompt }) {
           {/* only show delete & update button if the current user is the creator */}
           {user.uid === prompt.createdBy.id && (
             <>
-              <p onClick={() => setUpdate(true)}>Edit</p>
-              <p onClick={handleClick}>Delete</p>
+              <button onClick={() => setUpdate(true)}>Update</button>
+              <button onClick={handleClick}>Delete</button>
             </>
           )}
         </div>
