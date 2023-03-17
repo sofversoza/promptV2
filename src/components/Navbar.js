@@ -19,7 +19,7 @@ export default function Navbar() {
 
       <div className="prompt-cont">
         <img 
-          src={require("../assets/PrmptGray.png")} 
+          src={require("../assets/PromptNew.png")} 
           alt="Prompt logo"
           className="navbar-logo" 
         />

@@ -25,14 +25,11 @@ export default function PromptComments({ prompt }) {
       id: Math.random()
     }
     // console.log(commentToAdd)
-    // await updateDocument(prompt.id, {
-    //   comments: [...prompt.comments, commentToAdd]
-    // })
+    await updateDocument(prompt.id, {
+      comments: [...prompt.comments, commentToAdd]
+    })
     if (!response.error) {
       setNewComment("")
-      await updateDocument(prompt.id, {
-        comments: [...prompt.comments, commentToAdd]
-      })
     }
   }
 

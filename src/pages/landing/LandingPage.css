@@ -1,7 +1,9 @@
 .landing {
   display: flex;
   flex-direction: column;
+  gap: 2em;
   min-height: 100vh;
+  min-width: 100vw;
   align-items: center;
   justify-content: center;
   background-image: url("../../assets/SOFBG.png");
@@ -9,96 +11,55 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
-.flex-item-1 {
+.flexbox-1 {
   display: flex;
-  width: 100%;
-  max-width: 90%;
-  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  /* background: gray; */
 }
 .logo-cont {
   max-width: 28vw;
-  padding-right: 20px;
-  border-right: 0.55px #fff solid;
-  padding: 15px;
+  padding: 10px;
+  /* background-color: yellow; */
 }
 .landing-logo {
   width: 100%;
 }
 .message-cont {
-  max-width: 50vw;
-  align-self: flex-end;
-  padding: 15px;
+  /* background: violet; */
+  display: flex;
+  flex-direction: column;
+  border-left: 0.85px solid var(--bg-whitesmoke);
+  padding: 10px 0 10px 8px;
+  margin-bottom: 10px;
 }
 .message-cont h2 {
   color: #ffffff;
   margin: 0 !important;
-  word-spacing: 1px;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
   font-size: 23px;
   font-family: "contralto-small", sans-serif;
-  font-weight: 600;
-  font-style: normal;
+  font-weight: 300;
 }
 .message-cont span {
-  text-transform: lowercase;
-  font-size: 25px;
-  font-family: "scotch-display", sans-serif;
-  font-weight: 300;
-  font-style: italic;
-}
-.message-cont .ampersand {
-  font-size: 50px;
+  line-height: 1px;
   margin-left: 2px;
+  font-size: 30px;
+  font-family: "scotch-display", sans-serif;
 }
-.flex-item-2 {
+.flexbox-2 {
+  /* background: yellow; */
+  min-width: 25%;
+  /* padding: 10px; */
+}
+.btn-cont {
   display: flex;
-  max-width: 70%;
-  justify-content: center;
-  align-items: center;
-  border-top: 0.55px #fff solid;
-  border-bottom: 0.55px #fff solid;
+  justify-content: space-evenly;
 }
-.flex-item-2 .vision {
-  padding: 10px;
-  max-width: 62%;
+.btn-cont button {
+  font-size: 15px;
 }
-.flex-item-2 .vision p {
-  color: #fff;
-  font-size: 18px;
-  text-align: center;
-}
-.flex-item-3 {
-  margin-top: 3%;
-  display: flex;
-  flex-direction: column;
-  width: 70%;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-}
-.flex-item-3 .get-started h3 {
-  margin: 0;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 0.55px;
-  font-size: 22px;
-  font-family: "contralto-small", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-}
-.flex-item-3 .get-started span {
-  font-family: "krul", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 65px;
-}
-.flex-item-3 .btn-cont {
-  display: flex;
-  gap: 10px;
-  width: 30%;
-}
-.flex-item-3 .btn-cont button {
-  width: 100% !important;
-  letter-spacing: 0.25px;
+.btn-cont button:hover {
+  background: transparent;
 }
