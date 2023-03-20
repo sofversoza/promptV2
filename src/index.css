@@ -85,8 +85,8 @@ button {
   font-style: normal;
   letter-spacing: 0.8px;
   background-color: var(--primary-highlight);
+  border: none;
   cursor: pointer;
-  border: 0.9px solid var(--primary-highlight);
   padding: 13px 18px;
   margin: 3% 0.5% !important;
 }

@@ -55,7 +55,7 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
 }
 .prompt-card:hover {
   background-color: var(--bg-whitesmoke);
@@ -64,13 +64,14 @@
   margin: auto 0;
   display: flex;
   align-items: center;
-  gap: 0.35em;
+  gap: 0.15em;
 }
 .prompt-card .user-info .avatar {
   max-height: 30px;
   max-width: 30px;
   overflow: hidden;
   border-radius: 50%;
+  margin-right: 3px;
 }
 .prompt-card .user-info span, 
 .prompt-card .user-info p {
@@ -80,10 +81,8 @@
   font-weight: 500;
   font-style: normal;
 }
-.prompt-card .user-info span {
-  color: var(--text-info);
-  text-transform: uppercase;
-}
+/* .prompt-card .user-info span {
+} */
 .prompt-card .user-info p {
   color: var(--text-info-value);
 }
@@ -93,13 +92,14 @@
 }
 .prompt-card .prompt-info h5 {
   margin: 0 !important;
-  font-size: 1.05em;
+  font-size: 0.9em;
   font-family: "contralto-small", sans-serif;
   font-weight: 600;
   font-style: normal;
+  letter-spacing: 0.5px;
 }
 .prompt-card .prompt-info p {
-  font-size: 0.85em;
+  font-size: 0.75em;
   color: var(--text-info);
 }
 .prompt-card .prompt-info p::first-letter,
@@ -107,8 +107,8 @@
   text-transform: uppercase;
 }
 .prompt-card .prompt-info .read-more {
-  font-size: 0.8em;
-  text-decoration: 0.75px underline;
-  text-underline-offset: 1.2px;
+  font-size: 0.85em;
+  /* text-decoration: 0.75px underline; */
+  /* text-underline-offset: 1.2px; */
   color: var(--text-info-value);
 }

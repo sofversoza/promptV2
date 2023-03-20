@@ -3,7 +3,7 @@ import Avatar from "./Avatar"
 import "../pages/home/Home.css"
 
 export default function PromptList({ prompts }) {
-  const maxLength = 145;
+  const maxLength = 100;
 
   return (
     <div className="prompt-list flexbox-cont">
@@ -29,6 +29,7 @@ export default function PromptList({ prompts }) {
                   <p>{prompt.description}</p>
               }
             </div>
+            
           </div>
         </Link>
       ))}

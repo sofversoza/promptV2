@@ -2,9 +2,8 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useFirestore } from "../../hooks/useFirestore"
 import { useAuthContext } from "../../hooks/useAuthContext"
-import { MdDeleteSweep, MdEditNote } from "react-icons/md"
 import Avatar from "../../components/Avatar"
-import UpdatePrompt from "./UpdatePrompt"
+import UpdatePrompt from "../create/UpdatePrompt"
 import "./Prompt.css"
 
 export default function PromptDetail({ prompt }) {
