@@ -21,7 +21,8 @@
   text-transform: uppercase !important;
 }
 .prompt .prompt-detail .prompt-body .text-cont {
-  display: flex;
+  /* making this flex wraps a single sentence next line? */
+  /* display: flex; */
   margin-top: 0.55em;
   margin-left: 0.55em;
 }
@@ -120,7 +121,7 @@
   border: none;
   color: var(--text-color);
   padding: 10px;
-  min-height: 50px;
+  min-height: 40px;
   width: 100%;
   border-radius: 3px;
   resize: none;

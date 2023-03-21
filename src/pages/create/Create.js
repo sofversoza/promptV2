@@ -64,30 +64,30 @@ export default function Create() {
   return (
     <>
       <div className="page-title-cont">
-        <h2 className="page-title">Compose a new Prompt Submission</h2>    
+        <h2 className="page-title">Compose a new prompt</h2>    
       </div>
 
       <div className="create flexbox-cont">
         <div className="paper-content">
           <form onSubmit={handleSubmit}>
             <div className="form-title">
+              <span>Title</span>
               <input
                 required
                 type="text"
                 onChange={(e) => setTitle(e.target.value)}
                 value={title}
                 />
-              <span>Title</span>
             </div>
 
             <div className="form-description">
+              <span>Description</span>
               <textarea
                 required
                 type="text"
                 onChange={(e) => setDescription(e.target.value)}
                 value={description}>
               </textarea>
-              <span>Description</span>
             </div>
 
             <div className="form-last-item">

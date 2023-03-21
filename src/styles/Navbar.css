@@ -3,25 +3,34 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* border-bottom:  0.25px solid var(--accent-color); */
-  padding: 25px;
-  height: 127px;
-  max-height: 127px;
-  background-color: #f5f5f5ac;
+  padding: 10px 20px;
+  min-height: 30vh;
+  max-height: 30vh;
+  background-color: var(--bg-whitesmoke);
+  /* border-bottom:  0.5px solid var(--accent-color);   */
+  /* border: 1px red solid; */
 }
-.nav-action {
+.navbar .nav-action {
   width: 100%;
   display: flex;
   justify-content: flex-end;
   /* border: 1px red solid; */
 }
-.nav-action .nav-icon {
-  text-align: bottom;
+.navbar .logo-cont {
+  max-width: 15vw;
 }
-.prompt-cont {
-  max-width: 230px;
-}
-.prompt-cont .navbar-logo {
+.navbar .logo-cont .navbar-logo {
   width: 100%;
 }
-
+.navbar .quote-cont {
+  /* background: pink; */
+  text-align: center;
+  word-wrap: break-word;
+  padding: 0 10px;
+  min-width: 55vw;
+  max-width: 55vw;
+  overflow: hidden;
+}
+.navbar .quote-cont p {
+  font-size: 13px;
+}

@@ -38,36 +38,31 @@ body {
   /* border: 0.4px orange solid; */
 }
 .page-title-cont {
+  margin-top: 1.5em;
   display: flex;
   width: 100%;
-  /* flex-wrap: wrap; */
   justify-content: center;
   align-items: center;
-  background: #eceef06b;
+  /* background: var(--bg-whitesmoke); */
 }
 .page-title {
   margin: 0 !important;
-  padding: 15px 15px;
-  text-transform: uppercase;
-  color: var(--primary-color);
+  padding: 6px 2px;
   font-size: 16px;
-  font-family: "forma-djr-display", sans-serif;
   font-weight: 500;
-  font-style: normal;  
-  letter-spacing: 1.5px;
-  word-spacing: 2px;
+  border-bottom: 1px solid var(--accent-color);
 }
 .action-btn {
   color: var(--primary-highlight);
   /* text-transform: uppercase; */
-  font-size: 0.85em;
+  font-size: 0.75em;
   letter-spacing: 0.55px;
   font-family: "forma-djr-display", sans-serif;
   font-weight: 500;
   font-style: normal;
 }
 .action-btn:hover {
-  font-style: italic;
+  text-decoration: underline;
 }
 .error {
   color: red;

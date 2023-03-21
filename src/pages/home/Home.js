@@ -37,7 +37,8 @@ export default function Home() {
       )}
       <div className="page-title-cont">
         <h2 className="page-title">
-          Showing <span>{currentFilter}</span> Prompts
+          Showing <span>{currentFilter}</span> prompts 
+          ({filteredProjects ? filteredProjects.length : "0"}) 
         </h2>
       </div>
       {filteredProjects && <PromptList prompts={filteredProjects} />}

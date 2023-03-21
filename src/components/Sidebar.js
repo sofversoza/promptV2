@@ -13,9 +13,12 @@ export default function Sidebar() {
   return (
     <div className="sidebar">
       <div className="sidebar-content">
+
         <div className="user">
           <Avatar src={user.photoURL} />
           <p>Hi {user.displayName}!</p>
+          {/* <p>{user.metadata.lastLoginAt}</p> */}
+          {/* <p>{user.metadata.lastSignInTime}</p> */}
         </div>
 
         <nav className="links">

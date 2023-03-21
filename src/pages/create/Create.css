@@ -1,6 +1,6 @@
 .create .paper-content {
   /* border: 1px blue solid; */
-  width: 90%;
+  width: 70%;
 }
 .create .paper-content span {
   font-size: 0.75em;
@@ -25,17 +25,18 @@
   font-size: 0.9em;
   font-family: inherit;
   color: var(--text-color);
-  padding: 5px;
+  padding: 10px;
   width: 100%;
   border: none;
   border-bottom: 1px solid var(--accent-color);
-  background: transparent;
+  background: var(--bg-whitesmoke);
+  border-radius: 6px;
 }
 .create .paper-content input:focus,
 .create .paper-content textarea:focus {
   outline: none;
-  background-color: var(--bg-whitesmoke);
-  border-radius: 6px;
+  /* background-color: var(--bg-whitesmoke);
+  border-radius: 6px; */
 }
 .create .paper-content textarea {
   min-height: 130px;
