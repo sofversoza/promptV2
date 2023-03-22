@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useFirestore } from "../../hooks/useFirestore"
 import { useAuthContext } from "../../hooks/useAuthContext"
+import { MdOutlineFavoriteBorder, MdOutlineFavorite } from "react-icons/md"
 import Avatar from "../../components/Avatar"
 import UpdatePrompt from "../create/UpdatePrompt"
 import "./Prompt.css"
@@ -15,6 +16,10 @@ export default function PromptDetail({ prompt }) {
   const handleClick = (e) => {
     deleteDocument(prompt.id)
     navigate("/dashboard")
+  }
+
+  const addtoFavorites = (e) => {
+    console.log("adding to favorites")
   }
 
   return (
@@ -39,13 +44,23 @@ export default function PromptDetail({ prompt }) {
         </div>
 
         <div className="actions">
-          {/* only show delete & update button if the current user is the creator */}
-          {user.uid === prompt.createdBy.id && (
+          {user.uid === prompt.createdBy.id ? (
+            <>
+              <button onClick={() => setUpdate(true)}>Update</button>
+              <button onClick={handleClick}>Delete</button>
+            </> ) 
+            : 
+            <button onClick={addtoFavorites}>
+              Add to Favorites
+            </button>
+          }
+
+          {/* {user.uid === prompt.createdBy.id && (
             <>
               <button onClick={() => setUpdate(true)}>Update</button>
               <button onClick={handleClick}>Delete</button>
             </>
-          )}
+          )} */}
         </div>
       </div>
     }

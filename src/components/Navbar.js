@@ -1,11 +1,24 @@
-import React from 'react'
-import '../styles/Navbar.css'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useLogout } from '../hooks/useLogout'
+import Axios from "axios"
+import '../styles/Navbar.css'
 
 
 export default function Navbar() {
   const { logout, isPending } = useLogout()
+  const [quote, setQuote] = useState("")
+
+  const getQuote = () => {
+    Axios.get("https://api.themotivate365.com/stoic-quote").then((response) => {
+      // console.log(response)
+      setQuote(response.data.quote + " — " + response.data.author)
+    });
+  }
+
+  useEffect(() => {
+    getQuote();
+  }, []);
 
   return (
     <div className="navbar">
@@ -26,9 +39,8 @@ export default function Navbar() {
       </div>
 
       <div className="quote-cont">
-        <p>"Lorem ipsum dolor sit amet consectetur amet, Lorem ipsum dolor sit amet consectetur ametLorem ipsum dolor sit amet consectetur amet Lorem ipsum dolor sit amet consectetur amet"</p>
+        <p>{quote}</p>
       </div>
-
     </div>
   )
 }
