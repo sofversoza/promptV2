@@ -17,13 +17,6 @@ export default function Prompt() {
 
   return (
     <>
-      {/* <div className="page-title-cont">
-        <h2 className="page-title">
-          <span className="title">{`${document.title}`} — </span> 
-          <span className="user">{`${document.createdBy.displayName}`}</span>
-        </h2>    
-      </div> */}
-
       <div className="prompt">
         <PromptDetail prompt={document} />
         <PromptComments prompt={document} />

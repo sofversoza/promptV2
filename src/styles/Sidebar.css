@@ -18,12 +18,26 @@
   text-align: center;
   padding: 10px;
   min-height: 30vh;
-  max-height: 30vh;
+  max-height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   /* border: 1px red solid; */
+}
+.sidebar .user .btn-cont {
+  margin-top: 5px;
+}
+.sidebar .user .action-btn {
+  display: flex;
+  align-items: center;
+  color: white !important;
+  font-size: 13px;
+  /* text-transform: uppercase; */
+}
+.sidebar .user .action-btn .icon {
+  font-size: 14px;
+  margin-left: 3px;
 }
 .sidebar .avatar {
   width: 55px;

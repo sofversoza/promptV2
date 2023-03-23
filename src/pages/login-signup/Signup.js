@@ -13,7 +13,7 @@ function Signup({ setShowSignup, setShowLogin }) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(email, password, displayName, avatar)
+    // console.log(email, password, displayName, avatar)
     signup(email, password, displayName, avatar)
   }
 

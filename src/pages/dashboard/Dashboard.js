@@ -11,15 +11,19 @@ export default function Dashboard() {
   )
 
   return (
-    <>
+    <div className="dashboard">
       <div className="page-title-cont">
         <h2 className="page-title">{`${user.displayName}'s Dashboard`}</h2>    
       </div>
 
-      <div className="dashboard">
+      <h3>Prompt submissions ({documents ? documents.length : 0})</h3>
+
+      <div>
         {error && <p className="error">{error}</p>}
         {documents && <PromptList prompts={documents} />}
       </div>
-    </>
+
+      <h3>Saved prompts ()</h3>
+    </div>
   )
 }

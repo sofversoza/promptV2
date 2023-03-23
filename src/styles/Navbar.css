@@ -10,14 +10,8 @@
   /* border-bottom:  0.5px solid var(--accent-color);   */
   /* border: 1px red solid; */
 }
-.navbar .nav-action {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  /* border: 1px red solid; */
-}
 .navbar .logo-cont {
-  max-width: 15vw;
+  max-width: 20vw;
   /* border: 1px red solid; */
 }
 .navbar .logo-cont .navbar-logo {
@@ -34,7 +28,7 @@
   /* overflow: hidden; */
 }
 .navbar .quote-cont p {
-  font-size: 12px;
+  font-size: 13px;
   font-style: italic;
   color: var(--text-info);
 }

@@ -35,8 +35,9 @@ export const useSignup = () => {
       await setDoc(doc(db, "users", res.user.uid), {
         online: true,
         displayName,
-        photoURL: imgURL
-      })
+        photoURL: imgURL,
+        favorites: []
+      }, { merge: true })
 
       // dispatch login action
       dispatch({ type: 'LOGIN', payload: res.user })
