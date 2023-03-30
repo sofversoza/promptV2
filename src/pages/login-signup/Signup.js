@@ -54,7 +54,8 @@ function Signup({ setShowSignup, setShowLogin }) {
         {/* <div className="close-btn">
           <MdOutlineClose onClick={() => setShowSignup(false)} className="form-icon"/>
         </div> */}
-        <h2>Join prompt <HiUserPlus className="form-icon" /></h2>
+        <HiUserPlus className="form-icon" />
+        <h2>Join prompt</h2>
         <form onSubmit={handleSubmit}>
           <input 
             required

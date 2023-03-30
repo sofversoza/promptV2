@@ -27,7 +27,8 @@ export default function Login({ setShowLogin, setShowSignup }) {
         {/* <div className="close-btn">
           <MdOutlineClose onClick={() => setShowLogin(false)} className="form-icon"/>
         </div> */}
-        <h2>Welcome back <HiUserGroup className="form-icon"/></h2>
+        <HiUserGroup className="form-icon"/>
+        <h2>Welcome back</h2>
         <form onSubmit={handleSubmit}>
           <input 
             required

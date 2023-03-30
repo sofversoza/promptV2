@@ -20,19 +20,16 @@
   text-align: center;
 }
 .modalContent h2 {
-  /* FLEX to align h2 with icon */
-  display: flex;
-  /* align-items: center; */
-  justify-content: center;
   color: var(--primary-highlight);
+  margin-block-start: 0 !important;
   font-size: 1em;
   margin-bottom: 25px;
   text-align: center;
   font-weight: normal;
 }
 .modalContent .form-icon {
+  color: var(--primary-highlight);
   font-size: 1.15em;
-  margin-left: 6px;
 }
 .modalContent form {
   font-size: 0.85em;
