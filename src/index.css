@@ -76,17 +76,17 @@ button {
   border-radius: 50px;
   color: #fff;
   font-family: "forma-djr-display", sans-serif;
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
-  letter-spacing: 0.8px;
-  background-color: var(--primary-highlight);
+  letter-spacing: 1.2px;
+  background-color: var(--primary-color);
   border: none;
   cursor: pointer;
   padding: 13px 18px;
   margin: 3% 0.5% !important;
 }
 button:hover {
-  background-color: var(--primary-color);
+  background-color: var(--primary-highlight);
 }
 ul {
   padding-inline-start: 0!important;

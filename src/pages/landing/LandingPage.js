@@ -4,11 +4,12 @@ import Login from "../login-signup/Login"
 import Signup from "../login-signup/Signup"
 
 export default function LandingPage() {
-  const [showLogin, setShowLogin] = useState(false)
+  const [showLogin, setShowLogin] = useState(true)
   const [showSignup, setShowSignup] = useState(false)
 
   return (
     <div className="landing">
+      
       <div className="flexbox-1">
         <div className="logo-cont">
           <img 
@@ -25,7 +26,15 @@ export default function LandingPage() {
       </div>
 
       <div className="flexbox-2">
-        <div className="btn-cont">
+        {showLogin && 
+          <Login setShowLogin={setShowLogin} setShowSignup={setShowSignup}/>
+        }
+        {showSignup && 
+          <Signup setShowSignup={setShowSignup} setShowLogin={setShowLogin}/>
+        }
+
+
+        {/* <div className="btn-cont">
           <button onClick={() => setShowLogin(true)}>Get started</button>
           <button onClick={() => setShowSignup(true)}>Join prompt</button>
           {showLogin && 
@@ -34,7 +43,7 @@ export default function LandingPage() {
           {showSignup && 
             <Signup setShowSignup={setShowSignup} setShowLogin={setShowLogin}/>
           }
-        </div>
+        </div> */}
       </div>
     </div>
   )

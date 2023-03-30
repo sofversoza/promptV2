@@ -1,4 +1,4 @@
-.modalBG {
+/* .modalBG {
   position: fixed;
   top: 0;
   left: 0;
@@ -9,50 +9,72 @@
   height: 100vh;
   background: rgba(0,0,0,0.6);
   z-index: 1;
-}
+} */
 .modalContent {
-  max-width: 410px;
-  min-height: 350px;
-  margin: 0 auto;
-  padding: 20px;
-  background: rgb(245, 245, 245);
+  /* max-width: 410px; */
+  /* min-height: 350px; */
+  /* margin: 0 auto; */
+  /* background: rgb(245, 245, 245, 0.5); */
+  padding: 5px;
   border-radius: 10px;
   text-align: center;
 }
-.close-btn {
+.modalContent h2 {
+  /* FLEX to align h2 with icon */
   display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  color: var(--primary-highlight);
+  font-size: 1em;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: normal;
 }
-.form-icon {
-  font-size: 22px;
-  color: var(--text-color);
-  cursor: pointer;
+.modalContent .form-icon {
+  font-size: 1.15em;
+  margin-left: 6px;
 }
 .modalContent form {
   font-size: 0.85em;
+  overflow: hidden;
 }
 .modalContent form ::placeholder {
   /* opacity for Firefox users */
   opacity: 1;
-  color: var(--text-info);
+  color: #ffffff !important;
   font-family: var(--body-font);
   font-size: 1em;
 }
 .modalContent form input {
-  font-size: var(--body-font-size);
+  font-size: 13px;
   color: var(--text-color);
-  min-width: 85%;
+  min-width: 80%;
   height: 1.8vh;
   margin: 0.3em 0;
   padding: 15px;
-  border-radius: 3px;
   border: none;
+  border-bottom: 1.2px solid rgb(245, 245, 245, 0.5);
   outline: none;
+  background: none;
 }
 .modalContent form input:focus {
-  background-color: rgba(123, 120, 121, 0.1);
+  background-color: rgb(245, 245, 245, 0.5);
+  border-bottom: none;
+  border-radius: 3px;
+}
+.modalContent form input[type="file"] {
+  border-bottom: none !important;
+}
+.modalContent .avatar-input p {
+  font-size: 0.85em;
+}
+.modalContent .btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .modalContent button {
-  width: 100% !important;
+  width: 75% !important;
 }
 .btn-container {
   display: flex;
@@ -60,16 +82,20 @@
   width: 90%;
 }
 .form-info {
-  margin: 30px 10px 0 10px;
-  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 15px 10px 5px 10px;
+  font-size: 0.75em;
 }
 .form-info span {
-  color: var(--primary-color);
+  color: var(--primary-highlight);
   font-weight: bold;
   cursor: pointer;
 }
 .form-info span:hover {
-  color: var(--primary-highlight);
+  color: #ffffff;
 }
 .avatar-input {
   display: flex;

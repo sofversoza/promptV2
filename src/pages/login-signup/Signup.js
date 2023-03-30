@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useSignup } from "../../hooks/useSignup"
-import { MdOutlineClose } from "react-icons/md"
+import { HiUserPlus } from "react-icons/hi2"
 import "./Log-Sign.css"
 
 function Signup({ setShowSignup, setShowLogin }) {
@@ -51,10 +51,10 @@ function Signup({ setShowSignup, setShowLogin }) {
   return (
     <div className="modalBG">
       <div className="modalContent">
-        <div className="close-btn">
+        {/* <div className="close-btn">
           <MdOutlineClose onClick={() => setShowSignup(false)} className="form-icon"/>
-        </div>
-        <h2>Join prompt</h2>
+        </div> */}
+        <h2>Join prompt <HiUserPlus className="form-icon" /></h2>
         <form onSubmit={handleSubmit}>
           <input 
             required

@@ -9,6 +9,10 @@ export default function Dashboard() {
     "prompts",
     ["createdBy.id", "==", user.uid]
   )
+  // const { documents, error } = useCollection(
+  //   "prompts",
+  //   [favoritedBy.id, "==", user.uid]
+  // )
 
   return (
     <div className="dashboard">

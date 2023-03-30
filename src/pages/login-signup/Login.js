@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { useLogin } from "../../hooks/useLogin"
-import { MdOutlineClose } from "react-icons/md"
+import { IoMdLogIn } from "react-icons/io"
+import { BiLogInCircle } from "react-icons/bi"
+import { HiUser, HiUserGroup } from "react-icons/hi"
 
 import "./Log-Sign.css"
 
@@ -22,10 +24,10 @@ export default function Login({ setShowLogin, setShowSignup }) {
   return (
     <div className="modalBG">
       <div className="modalContent">
-        <div className="close-btn">
+        {/* <div className="close-btn">
           <MdOutlineClose onClick={() => setShowLogin(false)} className="form-icon"/>
-        </div>
-        <h2>Welcome back</h2>
+        </div> */}
+        <h2>Welcome back <HiUserGroup className="form-icon"/></h2>
         <form onSubmit={handleSubmit}>
           <input 
             required
@@ -50,7 +52,7 @@ export default function Login({ setShowLogin, setShowSignup }) {
           </div>
         </form>
         <div className="form-info">
-          Need to create an account?{" "} 
+          Need to create an account? 
           <span onClick={changeModals}>Join prompt</span>
         </div>
       </div>

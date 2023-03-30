@@ -1,11 +1,10 @@
 .landing {
-  display: flex;
-  flex-direction: column;
-  gap: 2em;
   min-height: 100vh;
   min-width: 100vw;
+  display: flex;
   align-items: center;
   justify-content: center;
+  gap: 8%;
   background-image: url("../../assets/SOFBG.png");
   background-position: center;
   background-size: cover;
@@ -13,45 +12,49 @@
 }
 .flexbox-1 {
   display: flex;
-  align-items: center;
-  padding: 15px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1em;
+  order: 1;
+  padding: 2%;
+  border-left: 1.2px solid rgb(245, 245, 245, 0.5);
   /* background: gray; */
 }
 .logo-cont {
-  max-width: 28vw;
+  min-width: 28vw;
+  max-width: 35vw;
   padding: 10px;
   /* background-color: yellow; */
 }
 .landing-logo {
-  width: 100%;
+  width: 90%;
 }
 .message-cont {
-  /* background: violet; */
   display: flex;
   flex-direction: column;
-  border-left: 0.85px solid var(--bg-whitesmoke);
+  gap: 5px;
   padding: 10px 0 10px 8px;
-  margin-bottom: 10px;
 }
 .message-cont h2 {
   color: #ffffff;
   margin: 0 !important;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  word-spacing: 1px;
   text-transform: uppercase;
-  font-size: 23px;
+  font-size: 1.5rem;
   font-family: "contralto-small", sans-serif;
   font-weight: 300;
 }
 .message-cont span {
   line-height: 1px;
-  margin-left: 2px;
-  font-size: 30px;
+  margin-left: 4px;
+  font-size: 35px;
   font-family: "scotch-display", sans-serif;
 }
 .flexbox-2 {
   /* background: yellow; */
-  min-width: 25%;
-  /* padding: 10px; */
+  max-width: 28%;
+  padding: 10px;
 }
 .btn-cont {
   display: flex;
