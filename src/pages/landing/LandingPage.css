@@ -11,26 +11,19 @@
   background-repeat: no-repeat;
 }
 .flexbox-1 {
+  min-width: 25vw;
+  max-width: 30vw;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   order: 1;
-  gap: 1px;
   padding: 5% 0;
-  /* border-left: 1.2px solid rgb(245, 245, 245, 0.5); */
   /* background: gray; */
 }
-.logo-cont {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  min-width: 25vw;
-  max-width: 35vw;
-  padding: 10px 0;
-  /* background-color: pink; */
-}
 .landing-logo {
-  width: 80%;
+  width: 100%;
+  padding: 10px 0;
+  /* background: pink; */
 }
 .message-cont {
   display: flex;
@@ -63,17 +56,50 @@
 }
 .flexbox-3 {
   min-height: 33vh;
-  margin-right: -7vw;
+  margin-right: -5vw;
   border-right: 1.2px solid rgb(245, 245, 245, 0.5);
 }
-/* .btn-cont {
-  display: flex;
-  justify-content: space-evenly;
+
+/* under 600px */
+@media (max-width: 600px) {
+  .landing {
+    flex-direction: column;
+  }
+  .flexbox-1 {
+    padding: 0 15%;
+    margin-bottom: 10%;
+  }
+  .landing-logo {
+    width: 260px;
+    height: 80px;
+  }
+  .flexbox-2 {
+    order: 1;
+    max-width: 85%;
+  }
+  .flexbox-3 {
+    display: none;
+  }
 }
-.btn-cont button {
-  font-size: 15px;
+
+/* over 740px (worked on 768px -- ipad mini) */
+@media (min-width: 740px) and (max-width: 850px) {
+  .landing {
+    flex-direction: column;
+  }
+  .flexbox-1 {
+    padding: 0 15%;
+    margin-bottom: 10%;
+  }
+  .landing-logo {
+    width: 380px;
+    height: 100px;
+  }
+  .flexbox-2 {
+    order: 1;
+    max-width: 85%;
+  }
+  .flexbox-3 {
+    display: none;
+  }
 }
-.btn-cont button:hover {
-  border: 0.9px solid var(--primary-highlight);
-  background: transparent;
-} */

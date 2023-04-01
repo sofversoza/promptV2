@@ -39,13 +39,11 @@ export default function LandingPage() {
     <div className="landing">
       
       <div className="flexbox-1">
-        <div className="logo-cont">
-          <img 
-            src={require(`../../assets/logos/${logo}`)} 
-            alt="Prompt logo"
-            className="landing-logo" 
-          />
-        </div>
+        <img 
+          src={require(`../../assets/logos/${logo}`)} 
+          alt="Prompt logo"
+          className="landing-logo" 
+        />
       </div>
 
       <div className="flexbox-2">
