@@ -110,7 +110,5 @@
 }
 .prompt-card .prompt-info .read-more {
   font-size: 0.85em;
-  /* text-decoration: 0.75px underline; */
-  /* text-underline-offset: 1.2px; */
   color: var(--text-info-value);
 }

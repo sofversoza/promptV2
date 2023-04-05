@@ -11,11 +11,18 @@
   /* border: 1px red solid; */
 }
 .navbar .logo-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 20vw;
   max-width: 20vw;
-  /* border: 1px red solid; */
+  /* border: 1px orange solid; */
+  padding: 3% 0;
 }
-.navbar .logo-cont .navbar-logo {
-  width: 100%;
+.navbar .navbar-logo {
+  filter: invert(55%);
+  width: 265px;
+  height: 90px;
 }
 .navbar .quote-cont {
   /* border: 1px red solid; */
@@ -31,4 +38,11 @@
   font-size: 13px;
   font-style: italic;
   color: var(--text-info);
+}
+
+/* over 740px (worked on 768px -- ipad mini) */
+@media (min-width: 740px) and (max-width: 850px) {
+  .navbar {
+    min-height: 25vh;
+  }
 }

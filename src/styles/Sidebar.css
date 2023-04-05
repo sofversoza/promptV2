@@ -79,3 +79,14 @@
   background: var(--bg-color);
   border-radius: 20px 0 0 20px;
 }
+
+/* over 740px (worked on 768px -- ipad mini) */
+@media (min-width: 740px) and (max-width: 850px) {
+  .sidebar {
+    width: 26vw;
+    min-width: 26vw;
+  }
+  .sidebar .user {
+    min-height: 25vh;
+  }
+}

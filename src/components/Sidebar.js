@@ -17,7 +17,6 @@ export default function Sidebar() {
   return (
     <div className="sidebar">
       <div className="sidebar-content">
-
         <div className="user">
           <Avatar src={user.photoURL} />
           <p>Hi {user.displayName}!</p>
@@ -60,7 +59,6 @@ export default function Sidebar() {
             </li>
           </ul>
         </nav>
-
       </div>
     </div>
   )
