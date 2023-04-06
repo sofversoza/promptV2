@@ -1,37 +1,42 @@
-import "../styles/Sidebar.css"
+import { useState } from 'react'
+import { CgClose, CgMenu } from "react-icons/cg"
 import { useAuthContext } from "../hooks/useAuthContext"
 import { useLogout } from '../hooks/useLogout'
 import { Link } from 'react-router-dom'
 import { NavLink } from "react-router-dom"
 import { GiSpellBook } from "react-icons/gi"
-import { TbLogout } from "react-icons/tb"
 import { ImQuill } from "react-icons/im"
 import { MdDashboard } from "react-icons/md"
 import { VscSettings } from "react-icons/vsc"
 import Avatar from "./Avatar"
+import "../styles/HamburgerMenu.css"
 
-export default function Sidebar() {
+export default function HamburgerMenu() {
+  const [showMenu, setShowMenu] = useState("menu hidden") 
   const { user } = useAuthContext()
   const { logout, isPending } = useLogout()
 
   return (
-    <div className="sidebar">
-      <div className="sidebar-content">
+    <div className="hamburger-menu">
+
+      <div className="icon-box" onClick={() => setShowMenu("menu visible")}>
+        <CgMenu className="menu-icon" />
+      </div>
+      
+      <div className={showMenu}>
+        <div className="menu-icon-box">
+          <Link>
+            {!isPending && <span className='action-btn' onClick={logout}>Log off</span>}
+            {isPending && <span className='action-btn'>Logging off...</span>}
+          </Link>
+          <CgClose className="menu-icon" onClick={() => setShowMenu("menu hidden")} />
+        </div>
         <div className="user">
           <Avatar src={user.photoURL} />
           <p>Hi {user.displayName}!</p>
-
-          <div className="btn-cont">
-            <Link>
-              {!isPending && <span className='action-btn' onClick={logout}>
-                Log off <TbLogout className='icon'/></span>
-              }
-              {isPending && <span className='action-btn'>Logging off...</span>}
-            </Link>
-          </div>
         </div>
 
-        <nav className="links">
+        <nav className="links" onClick={() => setShowMenu('menu hidden')}>
           <ul>
             <li>
               <NavLink to="/">

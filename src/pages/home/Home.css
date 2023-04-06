@@ -9,9 +9,6 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  /* background: var(--bg-whitesmoke); */
-  /* border-bottom:  0.25px solid var(--accent-color); */
-  /* border: 1px red solid; */
 }
 .prompt-filter button {
   background: var(--primary-color);
@@ -111,4 +108,24 @@
 .prompt-card .prompt-info .read-more {
   font-size: 0.85em;
   color: var(--text-info-value);
+}
+
+/* under 600px */
+@media (max-width: 600px) {
+  .prompt-filter {
+    padding: 2%;
+  }
+  .prompt-card {
+    width: 310px;
+  }
+}
+
+/* over 740px and below 800 (for ipad mini 768px & galaxy tab 800px) */
+@media (min-width: 740px) and (max-width: 800px) {
+  .prompt-filter {
+    padding: 2%;
+  }
+  .prompt-card {
+    width: 400px;
+  }
 }

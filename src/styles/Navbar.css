@@ -10,6 +10,9 @@
   /* border-bottom:  0.5px solid var(--accent-color);   */
   /* border: 1px red solid; */
 }
+.navbar .hamburger {
+  display: none;
+}
 .navbar .logo-cont {
   display: flex;
   justify-content: center;
@@ -38,6 +41,25 @@
   font-size: 13px;
   font-style: italic;
   color: var(--text-info);
+}
+
+/* under 600px */
+@media (max-width: 600px) {
+  .navbar .hamburger {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .navbar {
+    min-height: 20vh;
+  }
+  .navbar .logo-cont {
+    padding: 0 0 3% 0;
+  }
+  .navbar .navbar-logo {
+    width: 220px;
+    height: 53px;
+  }
 }
 
 /* over 740px (worked on 768px -- ipad mini) */

@@ -80,6 +80,13 @@
   border-radius: 20px 0 0 20px;
 }
 
+/* under 600px */
+@media (max-width: 600px) {
+  .sidebar {
+    display: none;
+  }
+}
+
 /* over 740px (worked on 768px -- ipad mini) */
 @media (min-width: 740px) and (max-width: 850px) {
   .sidebar {

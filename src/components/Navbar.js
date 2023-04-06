@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { CgClose, CgMenu } from "react-icons/cg"
+import HamburgerMenu from './HamburgerMenu'
 import Axios from "axios"
 import '../styles/Navbar.css'
 
@@ -46,6 +48,10 @@ export default function Navbar() {
 
   return (
     <div className="navbar">
+      <div className="hamburger">
+        <HamburgerMenu />
+      </div>
+      
       <div className="logo-cont">
         <img 
           src={require(`../assets/logos/${logo}`)} 

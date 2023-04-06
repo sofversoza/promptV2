@@ -1,8 +1,6 @@
 import { useState } from 'react'
 import { useLogin } from "../../hooks/useLogin"
-import { IoMdLogIn } from "react-icons/io"
-import { BiLogInCircle } from "react-icons/bi"
-import { HiUser, HiUserGroup } from "react-icons/hi"
+import { HiUserGroup } from "react-icons/hi"
 
 import "./Log-Sign.css"
 
