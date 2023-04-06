@@ -37,7 +37,6 @@ export default function LandingPage() {
 
   return (
     <div className="landing">
-      
       <div className="flexbox-1">
         <img 
           src={require(`../../assets/logos/${logo}`)} 
@@ -45,7 +44,6 @@ export default function LandingPage() {
           className="landing-logo" 
         />
       </div>
-
       <div className="flexbox-2">
         {showLogin && 
           <Login setShowLogin={setShowLogin} setShowSignup={setShowSignup}/>
@@ -53,17 +51,6 @@ export default function LandingPage() {
         {showSignup && 
           <Signup setShowSignup={setShowSignup} setShowLogin={setShowLogin}/>
         }
-
-        {/* <div className="btn-cont">
-          <button onClick={() => setShowLogin(true)}>Get started</button>
-          <button onClick={() => setShowSignup(true)}>Join prompt</button>
-          {showLogin && 
-            <Login setShowLogin={setShowLogin} setShowSignup={setShowSignup}/>
-          }
-          {showSignup && 
-            <Signup setShowSignup={setShowSignup} setShowLogin={setShowLogin}/>
-          }
-        </div> */}
       </div>
       <div className="flexbox-3"></div>
     </div>

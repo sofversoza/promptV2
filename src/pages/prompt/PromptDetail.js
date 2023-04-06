@@ -2,7 +2,6 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useFirestore } from "../../hooks/useFirestore"
 import { useAuthContext } from "../../hooks/useAuthContext"
-import { MdOutlineFavoriteBorder, MdOutlineFavorite } from "react-icons/md"
 import Avatar from "../../components/Avatar"
 import UpdatePrompt from "../create/UpdatePrompt"
 import "./Prompt.css"
@@ -18,10 +17,6 @@ export default function PromptDetail({ prompt }) {
     navigate("/dashboard")
   }
 
-  const addtoFavorites = (e) => {
-    console.log("adding to favorites")
-  }
-
   return (
     <>
     {update ? 
@@ -29,38 +24,24 @@ export default function PromptDetail({ prompt }) {
       :
       <div className="prompt-detail">
         <div className="prompt-body">
-          <h2>{prompt.title}</h2>
-
+          <h2 className="prompt-title">{prompt.title}</h2>
           <div className="user-info">
             <Avatar src={prompt.createdBy.photoURL} alt="user's avatar" />
             <span>{prompt.createdBy.displayName}</span>
             <p>·</p>
             <span className="date">{prompt.createdAt.toDate().toDateString()}</span>
           </div>
-
           <div className="text-cont">
-            <p>{prompt.description}</p>
+            <p className="prompt-body-text">{prompt.description}</p>
           </div>
         </div>
-
         <div className="actions">
-          {user.uid === prompt.createdBy.id ? (
-            <>
-              <button onClick={() => setUpdate(true)}>Update</button>
-              <button onClick={handleClick}>Delete</button>
-            </> ) 
-            : 
-            <button onClick={addtoFavorites}>
-              Add to Favorites
-            </button>
-          }
-
-          {/* {user.uid === prompt.createdBy.id && (
+          {user.uid === prompt.createdBy.id && (
             <>
               <button onClick={() => setUpdate(true)}>Update</button>
               <button onClick={handleClick}>Delete</button>
             </>
-          )} */}
+          )}
         </div>
       </div>
     }

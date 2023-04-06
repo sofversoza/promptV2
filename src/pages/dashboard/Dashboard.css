@@ -1,10 +1,16 @@
 .dashboard {
-  /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
   margin-bottom: 5%;
 }
 .dashboard h3 {
-  margin: 3% 5% 0 5%;
+  margin: 3% 7% 0 7%;
   font-size: 13px;
+}
+
+/* under 600px */
+@media (max-width: 600px) {
+  .dashboard h3 {
+    margin: 7% 10% 0 10%;
+  }
 }

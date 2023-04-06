@@ -38,7 +38,6 @@ export default function PromptComments({ prompt }) {
       <div className="title">
         <h3>Comments</h3>
       </div>
-
       <span>Leave a public comment on this prompt</span>
       <div className="comment-form">
         <form className="add-comment" onSubmit={handleSubmit}>
@@ -50,7 +49,6 @@ export default function PromptComments({ prompt }) {
           <button className="btn">Submit</button>
         </form>
       </div>
-
       <div className="comment-card">
       <h3>All comments ({prompt.comments.length})</h3>
         <ul>
@@ -60,14 +58,12 @@ export default function PromptComments({ prompt }) {
               <div className="comment-author">
                 <Avatar src={comment.photoURL} className="avatar" />
                 <p>{comment.displayName} · </p>
-                
                 <div className="comment-date">
                   <p>
                     {formatDistanceToNow(comment.createdAt.toDate(), { addSuffix: true })}
                   </p>
                 </div>
               </div>
-
               <div className="comment-content">
                 <p>{comment.content}</p>
               </div>

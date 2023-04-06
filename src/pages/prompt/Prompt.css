@@ -10,29 +10,12 @@
 .prompt .prompt-detail .prompt-body {
   margin-bottom: 1em;
 }
-.prompt .prompt-detail .prompt-body h2 {
-  margin: 0;
-  font-family: "essonnes-headline", serif;
-  font-weight: 700;
-  font-style: italic;
-  font-size: 1.55em;
-}
 .prompt-detail h2::first-letter {
   text-transform: uppercase !important;
 }
 .prompt .prompt-detail .prompt-body .text-cont {
-  /* making this flex wraps a single sentence next line? */
-  /* display: flex; */
   margin-top: 0.55em;
   margin-left: 0.55em;
-}
-.prompt .prompt-detail .prompt-body p {
-  font-family: "essonnes-display", serif;
-  font-weight: 300;
-  font-size: 1em;
-  line-height: 1.1em;
-  word-spacing: 1px;
-  letter-spacing: 0.55px;
 }
 .prompt .prompt-detail .prompt-body p::first-letter {
   text-transform: uppercase;
@@ -44,7 +27,6 @@
   float: top;
 }
 .prompt .prompt-detail .prompt-body .user-info {
-  /* background: lightblue; */
   margin: 1% 0 10% 0;
   width: 100%;
   display: flex;
@@ -179,4 +161,35 @@
 }
 .prompt .prompt-comments .comment-card .comment-date p {
   color: var(--text-info-value);
+}
+
+/* under 600px */
+@media (max-width: 600px) {
+  .prompt {
+    align-items: center;
+  }
+  .prompt .prompt-detail {
+    max-width: 100%;
+    text-align: center;
+  }
+  .prompt .prompt-detail .prompt-body .user-info {
+    justify-content: center;
+  }
+  .prompt .prompt-detail .prompt-body h2 {
+    margin-top: 1%;
+    font-size: 1.2em;
+  }
+  .prompt .prompt-detail .prompt-body .text-cont {
+    margin-left: 0;
+  }
+  .prompt .prompt-detail .actions {
+    margin-top: 12%;
+    margin-bottom: 2%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .prompt .prompt-comments {
+    min-width: 100%;
+    
+  }
 }

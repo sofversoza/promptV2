@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useLogin } from "../../hooks/useLogin"
 import { HiUserGroup } from "react-icons/hi"
-
 import "./Log-Sign.css"
 
 export default function Login({ setShowLogin, setShowSignup }) {
@@ -22,9 +21,6 @@ export default function Login({ setShowLogin, setShowSignup }) {
   return (
     <div className="modalBG">
       <div className="modalContent">
-        {/* <div className="close-btn">
-          <MdOutlineClose onClick={() => setShowLogin(false)} className="form-icon"/>
-        </div> */}
         <HiUserGroup className="form-icon"/>
         <h2>Welcome back</h2>
         <form onSubmit={handleSubmit}>

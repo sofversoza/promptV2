@@ -42,13 +42,10 @@
   justify-content: center;
   align-items: baseline;
   gap: 15px;
-  /* border: 1px blue solid; */
 }
 .prompt-card {
-  /* border: 1px red solid; */
   background: #eceef06b;
   width: 230px;
-  /* margin: 10px auto; */
   padding: 13px 20px;
   border-radius: 6px;
   cursor: pointer;
@@ -80,8 +77,6 @@
   font-weight: 500;
   font-style: normal;
 }
-/* .prompt-card .user-info span {
-} */
 .prompt-card .user-info p {
   color: var(--text-info-value);
 }

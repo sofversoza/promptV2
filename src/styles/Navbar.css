@@ -7,8 +7,6 @@
   min-height: 30vh;
   max-height: fit-content;
   background-color: var(--bg-whitesmoke);
-  /* border-bottom:  0.5px solid var(--accent-color);   */
-  /* border: 1px red solid; */
 }
 .navbar .hamburger {
   display: none;
@@ -19,7 +17,6 @@
   align-items: center;
   min-width: 20vw;
   max-width: 20vw;
-  /* border: 1px orange solid; */
   padding: 3% 0;
 }
 .navbar .navbar-logo {
@@ -28,14 +25,12 @@
   height: 90px;
 }
 .navbar .quote-cont {
-  /* border: 1px red solid; */
   text-align: center;
   word-wrap: break-word;
   padding: 0 10px;
   min-width: 40vw;
   max-width: 60vw;
   justify-self: flex-end;
-  /* overflow: hidden; */
 }
 .navbar .quote-cont p {
   font-size: 13px;

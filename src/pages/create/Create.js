@@ -13,6 +13,28 @@ const categories = [
   { value: "expository", label: "Expository" }
 ]
 
+const customStyles = {
+  control: (styles, state) => ({
+    ...styles,
+    backgroundColor: "#f5f5f5ac",
+    height: "10px",
+    minHeight: "40px",
+    border: state.isFocused ? '1.5px solid #777EA6' : "transparent",
+    boxShadow: 'none',
+    borderColor: 'none',
+    '&:hover': {
+      color: '#777EA6'
+    }
+  }),
+  option: (styles, state) => ({
+    ...styles,
+    backgroundColor: state.isFocused && "#777EA6",
+    color: state.isFocused && "#f4f4f4",
+    fontSize: "14px",
+    padding: "5px",
+  })
+}
+
 export default function Create() {
   const navigate = useNavigate()
   const { user } = useAuthContext()
@@ -66,7 +88,6 @@ export default function Create() {
       <div className="page-title-cont">
         <h2 className="page-title">Compose a new prompt</h2>    
       </div>
-
       <div className="create flexbox-cont">
         <div className="paper-content">
           <form onSubmit={handleSubmit}>
@@ -77,9 +98,8 @@ export default function Create() {
                 type="text"
                 onChange={(e) => setTitle(e.target.value)}
                 value={title}
-                />
+              />
             </div>
-
             <div className="form-description">
               <span>Description</span>
               <textarea
@@ -89,7 +109,6 @@ export default function Create() {
                 value={description}>
               </textarea>
             </div>
-
             <div className="form-last-item">
               <div className="form-category">
                 <span>Category</span>
@@ -98,15 +117,14 @@ export default function Create() {
                     options={categories}
                     isClearable={true}
                     value={category}
+                    styles={customStyles}
                   />
               </div>
-
               <div className="buttons">
                 <button className="btn">Submit</button>
                 <button onClick={handleReset}>Reset form</button>
               </div>
             </div>
-
             {formError && <p className="error">{formError}</p>}
           </form>
         </div>

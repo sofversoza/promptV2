@@ -7,7 +7,6 @@ import { GiSpellBook } from "react-icons/gi"
 import { TbLogout } from "react-icons/tb"
 import { ImQuill } from "react-icons/im"
 import { MdDashboard } from "react-icons/md"
-import { VscSettings } from "react-icons/vsc"
 import Avatar from "./Avatar"
 
 export default function Sidebar() {
@@ -20,7 +19,6 @@ export default function Sidebar() {
         <div className="user">
           <Avatar src={user.photoURL} />
           <p>Hi {user.displayName}!</p>
-
           <div className="btn-cont">
             <Link>
               {!isPending && <span className='action-btn' onClick={logout}>
@@ -30,7 +28,6 @@ export default function Sidebar() {
             </Link>
           </div>
         </div>
-
         <nav className="links">
           <ul>
             <li>
@@ -49,12 +46,6 @@ export default function Sidebar() {
               <NavLink to="/create">
                 <ImQuill className="sb-icons" />
                 <span>Compose</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/settings">
-                <VscSettings className="sb-icons" />
-                <span>Settings</span>
               </NavLink>
             </li>
           </ul>

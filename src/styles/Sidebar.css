@@ -23,7 +23,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* border: 1px red solid; */
 }
 .sidebar .user .btn-cont {
   margin-top: 5px;
@@ -33,7 +32,6 @@
   align-items: center;
   color: white !important;
   font-size: 13px;
-  /* text-transform: uppercase; */
 }
 .sidebar .user .action-btn .icon {
   font-size: 14px;
@@ -47,7 +45,6 @@
   padding-left: 3.5vw;
   display: flex;
   flex-direction: column;
-  /* border: 1px red solid; */
 }
 .sidebar .links ul {
   margin-block-start: 0 !important;

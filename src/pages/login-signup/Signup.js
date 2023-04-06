@@ -51,9 +51,6 @@ function Signup({ setShowSignup, setShowLogin }) {
   return (
     <div className="modalBG">
       <div className="modalContent">
-        {/* <div className="close-btn">
-          <MdOutlineClose onClick={() => setShowSignup(false)} className="form-icon"/>
-        </div> */}
         <HiUserPlus className="form-icon" />
         <h2>Join prompt</h2>
         <form onSubmit={handleSubmit}>

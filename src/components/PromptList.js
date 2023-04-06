@@ -11,14 +11,12 @@ export default function PromptList({ prompts }) {
       {prompts.map(prompt => (
         <Link to={`/prompts/${prompt.id}`} key={prompt.id}>
           <div className="prompt-card">
-
             <div className="user-info">
               <Avatar src={prompt.createdBy.photoURL} alt="User's avatar" />
               <span>{prompt.createdBy.displayName}</span>
               {"·"}
               <p> {prompt.createdAt.toDate().toDateString()}</p>
             </div>
-
             <div className="prompt-info">
               <h5>{prompt.title}</h5>
               {prompt.description.length > maxLength ? 
@@ -29,7 +27,6 @@ export default function PromptList({ prompts }) {
                   <p>{prompt.description}</p>
               }
             </div>
-            
           </div>
         </Link>
       ))}

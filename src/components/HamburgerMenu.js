@@ -7,7 +7,6 @@ import { NavLink } from "react-router-dom"
 import { GiSpellBook } from "react-icons/gi"
 import { ImQuill } from "react-icons/im"
 import { MdDashboard } from "react-icons/md"
-import { VscSettings } from "react-icons/vsc"
 import Avatar from "./Avatar"
 import "../styles/HamburgerMenu.css"
 
@@ -18,11 +17,9 @@ export default function HamburgerMenu() {
 
   return (
     <div className="hamburger-menu">
-
       <div className="icon-box" onClick={() => setShowMenu("menu visible")}>
         <CgMenu className="menu-icon" />
       </div>
-      
       <div className={showMenu}>
         <div className="menu-icon-box">
           <Link>
@@ -35,7 +32,6 @@ export default function HamburgerMenu() {
           <Avatar src={user.photoURL} />
           <p>Hi {user.displayName}!</p>
         </div>
-
         <nav className="links" onClick={() => setShowMenu('menu hidden')}>
           <ul>
             <li>
@@ -54,12 +50,6 @@ export default function HamburgerMenu() {
               <NavLink to="/create">
                 <ImQuill className="sb-icons" />
                 <span>Compose</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/settings">
-                <VscSettings className="sb-icons" />
-                <span>Settings</span>
               </NavLink>
             </li>
           </ul>

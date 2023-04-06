@@ -54,21 +54,18 @@ export default function UpdatePrompt({ prompt, setUpdate }) {
       <div className="page-title-cont">
         <h2 className="page-title">Update Prompt</h2>    
       </div>
-
       <div className="create flexbox-cont">
         <div className="paper-content">
           <form onSubmit={handleUpdate}>
-            
             <div className="form-title">
               <input
                 required
                 type="text"
                 onChange={(e) => setTitle(e.target.value)}
                 value={title}
-                />
+              />
               <span>Title</span>
             </div>
-
             <div className="form-description">
               <textarea
                 required
@@ -78,7 +75,6 @@ export default function UpdatePrompt({ prompt, setUpdate }) {
               </textarea>
               <span>Description</span>
             </div>
-
             <div className="form-last-item">
               <div className="form-category">
                 <span>Category</span>
@@ -89,7 +85,6 @@ export default function UpdatePrompt({ prompt, setUpdate }) {
                     // value={category}
                   />
               </div>
-
               <div className="buttons">
                 <button className="btn">Update</button>
                 <button className="btn" onClick={() => setUpdate(false)}>Cancel</button>
