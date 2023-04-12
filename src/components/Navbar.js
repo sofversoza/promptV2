@@ -4,7 +4,8 @@ import Axios from "axios"
 import '../styles/Navbar.css'
 
 export default function Navbar() {
-  const [quote, setQuote] = useState("")
+  const [quote, setQuote] = useState([])
+  const [author, setAuthor] = useState("")
   const [logo, setLogo] = useState("Prompt12W.png")
 
   const logosArr = [
@@ -14,7 +15,6 @@ export default function Navbar() {
     "Prompt4W.png",
     "Prompt5W.png",
     "Prompt6W.png",
-    "Prompt7W.png",
     "Prompt8W.png",
     "Prompt9W.png",
     "Prompt10W.png",
@@ -58,6 +58,7 @@ export default function Navbar() {
       </div>
       <div className="quote-cont">
         <p>{quote}</p>
+        <span>{author}</span>
       </div>
     </div>
   )

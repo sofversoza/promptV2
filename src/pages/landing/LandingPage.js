@@ -15,7 +15,6 @@ export default function LandingPage() {
     "Prompt4W.png",
     "Prompt5W.png",
     "Prompt6W.png",
-    "Prompt7W.png",
     "Prompt8W.png",
     "Prompt9W.png",
     "Prompt10W.png",

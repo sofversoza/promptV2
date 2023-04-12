@@ -6,7 +6,8 @@
   padding: 10px 20px;
   min-height: 30vh;
   max-height: fit-content;
-  background-color: var(--bg-whitesmoke);
+  background-color: var(--bg-color);
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.25);
 }
 .navbar .hamburger {
   display: none;
@@ -21,7 +22,7 @@
 }
 .navbar .navbar-logo {
   filter: invert(55%);
-  width: 265px;
+  width: 260px;
   height: 90px;
 }
 .navbar .quote-cont {
