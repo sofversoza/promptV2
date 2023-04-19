@@ -7,9 +7,10 @@ https://user-images.githubusercontent.com/92960864/231610666-dff3cb8c-e097-457c-
 
 ⤴️ *Prompt's **Landing page** containing both **Log in & Sign up** forms*
 
-⤵️ *Prompt's **Homepage***
-
+⤵️ *Prompt's **Homepage*** 
+>📍 API call on the navbar to get a random quote on every refresh
 <img width="1032" alt="desktop_home" src="https://user-images.githubusercontent.com/92960864/231615756-cda2c9aa-a9c7-45ab-aa56-d72e335c62c2.png">
+
 
 ## 👤 As a user, I can...
 * Create a new account & upload a *user avatar*
